@@ -44,20 +44,44 @@ export function DemoCard({ imageUrl, rentCard }) {
               hoverTheme
               // iconAfter={isLiked ? HeartFilled : Heart}
               // onPress={onHeartPress}
-              iconAfter={Heart}
+              // iconAfter={Heart}
             >
               <Paragraph size="$8" fontWeight="100" left="$-3">
                 Royal Palm Heritage
               </Paragraph>
+              <Image
+                source={{
+                  uri: "https://clipart-library.com/images/RkiMyoycj.png",
+                  width: 30,
+                  height: 35,
+                }}
+                top="$1.5"
+              />
             </ListItem>
 
-            <ListItem hoverTheme icon={MapPin}>
-              <Paragraph size={"$5"} left="$-16">
+            <ListItem hoverTheme>
+              <Image
+                source={{
+                  uri: "https://cdn.icon-icons.com/icons2/2073/PNG/512/location_map_twitter_icon_127126.png",
+                  width: 28,
+                  height: 25,
+                }}
+                left="$-2"
+              />
+              <Paragraph size={"$5"} left="$-15">
                 Purwokerto, Jateng
               </Paragraph>
             </ListItem>
-            <ListItem hoverTheme icon={Star}>
-              <H4 left="$-12">4.5</H4>
+            <ListItem hoverTheme>
+              <Image
+                source={{
+                  uri: "https://banner2.cleanpng.com/20180411/oqq/kisspng-computer-icons-star-5-star-5acdd9ec67db40.8458493715234401084254.jpg",
+                  width: 27,
+                  height: 23,
+                }}
+                left="$-2"
+              />
+              <H4 left="$-9">4.5</H4>
               <H6>(4368 reviews)</H6>
             </ListItem>
           </YGroup.Item>
@@ -83,54 +107,3 @@ export function DemoCard({ imageUrl, rentCard }) {
     </Card>
   );
 }
-
-// export function DemoCard({ imageUrl, rentCard }) {
-//   if (rentCard) {
-//     return (
-//       <Card elevate size="$5" borderRadius="$6">
-//         <Image
-//           resizeMode="contain"
-//           alignSelf="center"
-//           source={{
-//             width: 350,
-//             height: 200,
-//             uri: imageUrl,
-//           }}
-//           // marginTop="$5"
-//           borderRadius="$6"
-//         />
-//         <Card.Header padded>
-//           <H2>Hotel</H2>
-//           <Paragraph theme="alt2">Disponible</Paragraph>
-//         </Card.Header>
-//         <Card.Footer padded>
-//           <XStack flex={1} />
-//           <Button borderRadius="$10">Comprar</Button>
-//         </Card.Footer>
-//       </Card>
-//     );
-//   }
-//   return (
-//     <Card elevate size="$6" borderRadius="$6">
-//       <Card.Header padded>
-//         <H2>Sony A7IV</H2>
-//         <Paragraph theme="alt2">Now available</Paragraph>
-//       </Card.Header>
-//       <Card.Footer padded>
-//         <XStack flex={1} />
-//         <Button borderRadius="$10">Purchase</Button>
-//       </Card.Footer>
-//       <Card.Background>
-//         <Image
-//           resizeMode="contain"
-//           alignSelf="center"
-//           source={{
-//             width: 500,
-//             height: 300,
-//             uri: imageUrl,
-//           }}
-//         />
-//       </Card.Background>
-//     </Card>
-//   );
-// }

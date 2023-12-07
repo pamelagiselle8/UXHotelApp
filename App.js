@@ -1,6 +1,6 @@
 import { TamaguiProvider } from "tamagui";
 import config from "./tamagui.config";
-import { StyleSheet } from "react-native";
+import { ImageComponent, StyleSheet } from "react-native";
 // import { ChevronRight, Cloud, Moon, Star, Sun } from "@tamagui/lucide-icons";
 import { DemoCard } from "./components/DemoCard";
 import DemoAvatar from "./components/DemoAvatar";

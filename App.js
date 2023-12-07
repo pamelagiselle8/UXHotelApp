@@ -1,5 +1,6 @@
 import { TamaguiProvider } from "tamagui";
 import config from "./tamagui.config";
+import { StyleSheet } from "react-native";
 // import { ChevronRight, Cloud, Moon, Star, Sun } from "@tamagui/lucide-icons";
 import { DemoCard } from "./components/DemoCard";
 import DemoAvatar from "./components/DemoAvatar";
@@ -18,7 +19,8 @@ export default function App() {
         <H5>Heading 5</H5>
         <H6>Heading 6</H6> */}
           <Heading>Heading</Heading>
-          {/* <DemoCard imageUrl="https://i.pinimg.com/474x/75/ec/e9/75ece9442868b3374dd1a51e16feeaf4.jpg" /> */}
+          <Separator paddingBottom="$5" />
+          <DemoCard imageUrl="https://i.pinimg.com/474x/75/ec/e9/75ece9442868b3374dd1a51e16feeaf4.jpg" />
 
           <Separator paddingBottom="$5" />
           <DemoCard

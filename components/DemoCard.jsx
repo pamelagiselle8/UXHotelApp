@@ -29,7 +29,7 @@ export function DemoCard({ imageUrl, rentCard }) {
     );
   }
   return (
-    <Card elevate size="$10">
+    <Card elevate size="$6" borderRadius="$6">
       <Card.Header padded>
         <H2>Sony A7IV</H2>
         <Paragraph theme="alt2">Now available</Paragraph>

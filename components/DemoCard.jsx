@@ -1,8 +1,31 @@
 // card.jsx
 import React from "react";
-import { Card, H2, Paragraph, XStack, Button, Image } from "tamagui"; // Importa los componentes necesarios
+import { Card, H2, Paragraph, XStack, Button, Image, Separator } from "tamagui"; // Importa los componentes necesarios
 
-export function DemoCard({ imageUrl }) {
+export function DemoCard({ imageUrl, rentCard }) {
+  if (rentCard) {
+    return (
+      <Card elevate size="$5">
+        <Image
+          resizeMode="contain"
+          alignSelf="center"
+          source={{
+            width: 350,
+            height: 200,
+            uri: imageUrl,
+          }}
+        />
+        <Card.Header padded>
+          <H2>Hotel</H2>
+          <Paragraph theme="alt2">Disponible</Paragraph>
+        </Card.Header>
+        <Card.Footer padded>
+          <XStack flex={1} />
+          <Button borderRadius="$10">Comprar</Button>
+        </Card.Footer>
+      </Card>
+    );
+  }
   return (
     <Card elevate size="$10">
       <Card.Header padded>

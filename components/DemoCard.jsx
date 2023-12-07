@@ -5,7 +5,7 @@ import { Card, H2, Paragraph, XStack, Button, Image, Separator } from "tamagui";
 export function DemoCard({ imageUrl, rentCard }) {
   if (rentCard) {
     return (
-      <Card elevate size="$5">
+      <Card elevate size="$5" borderRadius="$6">
         <Image
           resizeMode="contain"
           alignSelf="center"
@@ -14,6 +14,8 @@ export function DemoCard({ imageUrl, rentCard }) {
             height: 200,
             uri: imageUrl,
           }}
+          // marginTop="$5"
+          borderRadius="$6"
         />
         <Card.Header padded>
           <H2>Hotel</H2>

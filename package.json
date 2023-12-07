@@ -9,11 +9,13 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/rubik": "^0.2.3",
     "@tamagui/animations-css": "^1.79.7",
     "@tamagui/animations-moti": "^1.79.7",
     "@tamagui/card": "^1.79.7",
     "@tamagui/config": "^1.79.7",
     "@tamagui/lucide-icons": "^1.79.7",
+    "@tamagui/theme-builder": "^1.79.7",
     "@types/react": "~18.2.14",
     "expo": "~49.0.15",
     "expo-status-bar": "~1.6.0",

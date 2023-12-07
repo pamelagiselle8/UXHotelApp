@@ -16,3 +16,17 @@ declare module "tamagui" {
   interface TamaguiCustomConfig extends AppConfig {}
 }
 export default appConfig;
+
+// import { createFont, createTamagui, createTokens } from "tamagui";
+// import { Rubik_400Regular } from "@expo-google-fonts/rubik";
+// export default createTamagui({
+//   fonts: {
+//     body: createFont({
+//       family: "Rubik_400Regular",
+//     }),
+
+//     body_cn: createFont({
+//       family: "rubik",
+//     }),
+//   },
+// });

@@ -9,18 +9,20 @@ import { Rubik_400Regular } from "@expo-google-fonts/rubik";
 export default function App() {
   return (
     <TamaguiProvider config={config}>
-      <ScrollView marginTop="$7">
+      <ScrollView marginTop="$8">
         <YStack alignSelf="center" alignItems="center">
-          <DemoAvatar imageUrl="https://i.pinimg.com/474x/75/ec/e9/75ece9442868b3374dd1a51e16feeaf4.jpg" />
-          <H1>Heading 1</H1>
+          <DemoAvatar imageUrl="https://dnf8butk8bbsy.cloudfront.net/task_artifact_previews/2afa0cfb-aa7d-4c18-a455-651d37b35809.jpg?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWFmNmI1YzIwNzk0Y2Y5MCIsImJ1Y2tldCI6InJ1bndheS11cGxvYWRzLXByb2QiLCJzdGFnZSI6InByb2QiLCJleHAiOjE3MDIwODAwMDB9.UHHoWiTviDkYuwCkTRCWQLXiYbTWesrNdYhg1-T-ntg" />
+          <Separator paddingBottom="$2" />
+          {/* <H1>Heading 1</H1> */}
           <H2>Heading 2</H2>
           {/* <H3>Heading 3</H3>
-        <H4>Heading 4</H4>
-        <H5>Heading 5</H5>
-        <H6>Heading 6</H6> */}
-          <Heading>Heading</Heading>
-          <Separator paddingBottom="$5" />
-          <DemoCard imageUrl="https://i.pinimg.com/474x/75/ec/e9/75ece9442868b3374dd1a51e16feeaf4.jpg" />
+          <H4>Heading 4</H4> */}
+          <H5>Heading 5</H5>
+          {/* <H6>Heading 6</H6> */}
+          {/* <Heading>Heading</Heading> */}
+
+          {/* <Separator paddingBottom="$5" /> */}
+          {/* <DemoCard imageUrl="https://i.pinimg.com/474x/75/ec/e9/75ece9442868b3374dd1a51e16feeaf4.jpg" /> */}
 
           <Separator paddingBottom="$5" />
           <DemoCard

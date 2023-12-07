@@ -14,20 +14,19 @@ import {
   Label,
   YGroup,
   ListItem,
+  H3,
 } from "tamagui";
 import { Heart, MapPin, Star } from "@tamagui/lucide-icons";
+import { useState } from "react";
+
+// const [isLiked, setIsLiked] = useState(false);
 
 export function DemoCard({ imageUrl, rentCard }) {
+  // const onHeartPress = () => {
+  //   setIsLiked(!isLiked); // Cambia el estado del like al contrario
+  // };
   return (
-    <Card elevate size="$3" borderRadius="$6">
-      {/* <Button
-        icon={Heart}
-        width="$3"
-        height="$3"
-        paddingLeft="$20"
-        marginLeft="$15"
-        backgroundColor="rgba(52, 52, 52, 0.0)"
-      /> */}
+    <Card elevate size="$4" borderRadius="$6">
       <Image
         alignSelf="center"
         source={{
@@ -35,24 +34,23 @@ export function DemoCard({ imageUrl, rentCard }) {
           height: 200,
           uri: imageUrl,
         }}
-        // marginTop="$5"
         marginRight="$5"
         borderBottomRightRadius="$6"
-        // borderRadius="$6"
       />
       <Card.Header padded>
-        <Paragraph size="$8" fontWeight="100">
-          Royal Palm Heritage
-        </Paragraph>
-        {/* <Button
-          icon={<MapPin size="$1" />}
-          width={"$1"}
-          height={"$1"}
-          backgroundColor="rgba(52, 52, 52, 0.0)"
-        ></Button>
-        <Paragraph theme="alt2">Royal</Paragraph> */}
         <YGroup separator={<Separator />}>
           <YGroup.Item>
+            <ListItem
+              hoverTheme
+              // iconAfter={isLiked ? HeartFilled : Heart}
+              // onPress={onHeartPress}
+              iconAfter={Heart}
+            >
+              <Paragraph size="$8" fontWeight="100" left="$-3">
+                Royal Palm Heritage
+              </Paragraph>
+            </ListItem>
+
             <ListItem hoverTheme icon={MapPin}>
               <Paragraph size={"$5"} left="$-16">
                 Purwokerto, Jateng
@@ -74,24 +72,14 @@ export function DemoCard({ imageUrl, rentCard }) {
                 backgroundColor={"#8B66E5"}
                 color={"#F0F2F6"}
               >
-                Reservar
+                <Paragraph color="white" size={"$5"}>
+                  Reservar
+                </Paragraph>
               </Button>
             </ListItem>
           </YGroup.Item>
         </YGroup>
       </Card.Header>
-
-      {/* <Card.Footer padded>
-        <XStack flex={1} />
-        <Button
-          borderRadius="$10"
-          theme="active"
-          backgroundColor={"#8B66E5"}
-          color={"#F0F2F6"}
-        >
-          Reservar
-        </Button>
-      </Card.Footer> */}
     </Card>
   );
 }

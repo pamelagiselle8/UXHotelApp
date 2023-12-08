@@ -119,9 +119,9 @@ const TabsAdvancedBackground = () => {
       value={currentTab}
       onValueChange={setCurrentTab}
       orientation="horizontal"
-      size="$4.5"
+      size="$5"
       padding="$2"
-      height={700}
+      // height={700}
       flexDirection="column"
       activationMode="manual"
       backgroundColor="$background"
@@ -369,7 +369,7 @@ const TabsRovingIndicator = ({
   return (
     <YStack
       position="absolute"
-      backgroundColor="$color5"
+      backgroundColor="#8B66E5"
       opacity={0.7}
       animation="100ms"
       enterStyle={{

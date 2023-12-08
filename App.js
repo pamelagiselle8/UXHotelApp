@@ -1,42 +1,18 @@
 import { TamaguiProvider } from "tamagui";
 import config from "./tamagui.config";
-import { ImageComponent, SafeAreaView, StyleSheet } from "react-native";
-// import { ChevronRight, Cloud, Moon, Star, Sun } from "@tamagui/lucide-icons";
-import { DemoCard } from "./components/DemoCard";
-import DemoAvatar from "./components/DemoAvatar";
+import { SafeAreaView, Dimensions } from "react-native";
 import { DemoTab } from "./components/DemoTab";
-import { GroupDemo } from "./components/DemoGroup";
-
 import { Rubik_400Regular } from "@expo-google-fonts/rubik";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 export default function App() {
   return (
-    <SafeAreaView alignSelf="center" alignItems="center">
+    <SafeAreaView alignSelf="center" alignItems="center" height={windowHeight}>
       <TamaguiProvider config={config}>
-        <DemoTab />
+        <DemoTab width={windowWidth} />
       </TamaguiProvider>
     </SafeAreaView>
   );
 }
-
-import {
-  ScrollView,
-  AlertDialog,
-  Button,
-  ListItem,
-  Separator,
-  XStack,
-  YStack,
-  YGroup,
-  Card,
-  Paragraph,
-  Image,
-  Avatar,
-  Heading,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  H6,
-} from "tamagui";

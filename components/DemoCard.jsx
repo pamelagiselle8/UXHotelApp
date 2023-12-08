@@ -21,7 +21,7 @@ import { useState } from "react";
 
 // const [isLiked, setIsLiked] = useState(false);
 
-export function DemoCard({ imageUrl, rentCard }) {
+export function DemoCard({ imageUrl }) {
   // const onHeartPress = () => {
   //   setIsLiked(!isLiked); // Cambia el estado del like al contrario
   // };

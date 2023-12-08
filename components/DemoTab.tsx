@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { Dimensions } from "react-native";
+import { Inicio } from "../screens/Inicio";
 import {
   AnimatePresence,
   Button,
@@ -14,6 +15,10 @@ import {
   YStack,
   styled,
 } from "tamagui";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+
 const demos = ["background", "underline"] as const;
 
 const demosTitle: Record<(typeof demos)[number], string> = {
@@ -120,13 +125,14 @@ const TabsAdvancedBackground = () => {
       onValueChange={setCurrentTab}
       orientation="horizontal"
       size="$5"
-      padding="$2"
-      // height={700}
+      padding="$3"
       flexDirection="column"
       activationMode="manual"
       backgroundColor="$background"
       borderRadius="$4"
       position="relative"
+      alignSelf="center"
+      alignItems="center"
     >
       <AnimatePresence
         exitBeforeEnter
@@ -140,12 +146,14 @@ const TabsAdvancedBackground = () => {
           opacity={1}
           flex={1}
         >
-          <Tabs.Content
-            value={currentTab}
-            forceMount
-            flex={1}
-            justifyContent="center"
-          >
+          {/* *************************** SCREENS AQUI *************************** */}
+          <Tabs.Content value="tab1" width={windowWidth}>
+            <Inicio />
+          </Tabs.Content>
+          <Tabs.Content value="tab2" width={windowWidth}>
+            <H5 textAlign="center">{currentTab}</H5>
+          </Tabs.Content>
+          <Tabs.Content value="tab3" width={windowWidth}>
             <H5 textAlign="center">{currentTab}</H5>
           </Tabs.Content>
         </AnimatedYStack>
@@ -179,19 +187,34 @@ const TabsAdvancedBackground = () => {
           disablePassBorderRadius
           loop={false}
           aria-label="Manage your account"
-          space="$2"
+          space="$4"
           backgroundColor="transparent"
         >
-          <Tabs.Tab unstyled value="tab1" onInteraction={handleOnInteraction}>
-            <SizableText>Profile</SizableText>
+          <Tabs.Tab
+            marginTop="$1.5"
+            unstyled
+            value="tab1"
+            onInteraction={handleOnInteraction}
+          >
+            <SizableText>Inicio</SizableText>
           </Tabs.Tab>
 
-          <Tabs.Tab unstyled value="tab2" onInteraction={handleOnInteraction}>
-            <SizableText>Connections</SizableText>
+          <Tabs.Tab
+            marginTop="$1.5"
+            unstyled
+            value="tab2"
+            onInteraction={handleOnInteraction}
+          >
+            <SizableText>Buscar</SizableText>
           </Tabs.Tab>
 
-          <Tabs.Tab unstyled value="tab3" onInteraction={handleOnInteraction}>
-            <SizableText>Notifications</SizableText>
+          <Tabs.Tab
+            marginTop="$1.5"
+            unstyled
+            value="tab3"
+            onInteraction={handleOnInteraction}
+          >
+            <SizableText>Perfil</SizableText>
           </Tabs.Tab>
         </Tabs.List>
       </YStack>

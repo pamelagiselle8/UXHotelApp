@@ -30,15 +30,15 @@ export function DemoCard({ imageUrl }) {
   //   setIsLiked(!isLiked); // Cambia el estado del like al contrario
   // };
   return (
-    <Card elevate size="$4" borderRadius="$6" marginBottom="$3">
+    <Card elevate size="$3" borderRadius="$6" marginBottom="$3">
       <Image
-        alignSelf="left"
+        marginRight="$5"
         source={{
           width: 1,
-          height: 170,
+          height: 180,
           uri: imageUrl,
         }}
-        width={windowWidth - 45}
+        width={windowWidth - 80}
         borderBottomRightRadius="$6"
         borderTopLeftRadius="$6"
       />
@@ -76,7 +76,7 @@ export function DemoCard({ imageUrl }) {
                 }}
                 left="$-2"
               />
-              <Paragraph size={"$5"} left="$-15">
+              <Paragraph size={"$5"} left="$-12">
                 {/* VARIABLE */}
                 Purwokerto, Jateng
               </Paragraph>
@@ -92,7 +92,7 @@ export function DemoCard({ imageUrl }) {
                 left="$-2"
               />
               {/* VARIABLE */}
-              <H4 left="$-9">4.5</H4>
+              <H4 left="$-6">4.5</H4>
               <H6>(4368 reviews)</H6>
             </ListItem>
           </YGroup.Item>

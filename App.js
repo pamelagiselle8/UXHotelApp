@@ -9,9 +9,9 @@ const windowHeight = Dimensions.get("window").height;
 
 export default function App() {
   return (
-    <SafeAreaView alignSelf="center" alignItems="center" height={windowHeight}>
+    <SafeAreaView alignSelf="center" alignItems="center">
       <TamaguiProvider config={config}>
-        <DemoTab width={windowWidth} />
+        <DemoTab width={windowWidth} height={windowHeight} />
       </TamaguiProvider>
     </SafeAreaView>
   );

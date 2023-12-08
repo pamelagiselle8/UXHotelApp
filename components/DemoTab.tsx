@@ -189,32 +189,39 @@ const TabsAdvancedBackground = () => {
           aria-label="Manage your account"
           space="$4"
           backgroundColor="transparent"
+          marginBottom="$-2"
         >
           <Tabs.Tab
-            marginTop="$1.5"
+            marginTop="$2"
             unstyled
             value="tab1"
             onInteraction={handleOnInteraction}
           >
-            <SizableText>Inicio</SizableText>
+            <SizableText color={currentTab === "tab1" ? "white" : "#6155CC"}>
+              Inicio
+            </SizableText>
           </Tabs.Tab>
 
           <Tabs.Tab
-            marginTop="$1.5"
+            marginTop="$2"
             unstyled
             value="tab2"
             onInteraction={handleOnInteraction}
           >
-            <SizableText>Buscar</SizableText>
+            <SizableText color={currentTab === "tab2" ? "white" : "#6155CC"}>
+              Buscar
+            </SizableText>
           </Tabs.Tab>
 
           <Tabs.Tab
-            marginTop="$1.5"
+            marginTop="$2"
             unstyled
             value="tab3"
             onInteraction={handleOnInteraction}
           >
-            <SizableText>Perfil</SizableText>
+            <SizableText color={currentTab === "tab3" ? "white" : "#6155CC"}>
+              Perfil
+            </SizableText>
           </Tabs.Tab>
         </Tabs.List>
       </YStack>

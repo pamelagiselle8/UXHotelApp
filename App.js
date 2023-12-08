@@ -4,6 +4,9 @@ import { ImageComponent, StyleSheet } from "react-native";
 // import { ChevronRight, Cloud, Moon, Star, Sun } from "@tamagui/lucide-icons";
 import { DemoCard } from "./components/DemoCard";
 import DemoAvatar from "./components/DemoAvatar";
+import { DemoTab } from "./components/DemoTab";
+import { GroupDemo } from "./components/DemoGroup";
+
 import { Rubik_400Regular } from "@expo-google-fonts/rubik";
 
 export default function App() {
@@ -11,9 +14,11 @@ export default function App() {
     <TamaguiProvider config={config}>
       <ScrollView marginTop="$8">
         <YStack alignSelf="center" alignItems="center">
-          <DemoAvatar imageUrl="https://dnf8butk8bbsy.cloudfront.net/task_artifact_previews/2afa0cfb-aa7d-4c18-a455-651d37b35809.jpg?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWFmNmI1YzIwNzk0Y2Y5MCIsImJ1Y2tldCI6InJ1bndheS11cGxvYWRzLXByb2QiLCJzdGFnZSI6InByb2QiLCJleHAiOjE3MDIwODAwMDB9.UHHoWiTviDkYuwCkTRCWQLXiYbTWesrNdYhg1-T-ntg" />
-          <Separator paddingBottom="$2" />
+          {/* <DemoAvatar imageUrl="https://dnf8butk8bbsy.cloudfront.net/task_artifact_previews/2afa0cfb-aa7d-4c18-a455-651d37b35809.jpg?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWFmNmI1YzIwNzk0Y2Y5MCIsImJ1Y2tldCI6InJ1bndheS11cGxvYWRzLXByb2QiLCJzdGFnZSI6InByb2QiLCJleHAiOjE3MDIwODAwMDB9.UHHoWiTviDkYuwCkTRCWQLXiYbTWesrNdYhg1-T-ntg" /> */}
+          {/* <Separator paddingBottom="$2" /> */}
           {/* <H1>Heading 1</H1> */}
+          <DemoTab />
+          {/* <GroupDemo /> */}
           <H2>Heading 2</H2>
           {/* <H3>Heading 3</H3>
           <H4>Heading 4</H4> */}

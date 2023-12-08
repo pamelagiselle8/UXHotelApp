@@ -39,9 +39,9 @@ export function Inicio() {
 
       <View alignSelf="center" paddingTop="$15">
         <DemoCard imageUrl="https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg" />
-        <DemoCard imageUrl="https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg" />
-        <DemoCard imageUrl="https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg" />
-        <Separator paddingTop="$3" />
+        <DemoCard imageUrl="https://forbes.es/wp-content/uploads/2023/05/Airbnb-Negocio_01.jpg?format=webp&width=831&height=467" />
+        <DemoCard imageUrl="https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16%3A9/w_2560%252Cc_limit/airbnb%252520luxe.jpg?format=webp&width=831&height=467" />
+        <Separator paddingTop="$4" />
       </View>
     </ScrollView>
   );

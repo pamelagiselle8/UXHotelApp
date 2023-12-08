@@ -15,6 +15,7 @@ import {
   YStack,
   styled,
 } from "tamagui";
+import DetalleLugar from "../screens/DetalleLugar";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -148,10 +149,10 @@ const TabsAdvancedBackground = () => {
         >
           {/* *************************** SCREENS AQUI *************************** */}
           <Tabs.Content value="tab1" width={windowWidth}>
-            <Inicio />
+            <DetalleLugar />
           </Tabs.Content>
           <Tabs.Content value="tab2" width={windowWidth}>
-            <H5 textAlign="center">{currentTab}</H5>
+            <Inicio />
           </Tabs.Content>
           <Tabs.Content value="tab3" width={windowWidth}>
             <H5 textAlign="center">{currentTab}</H5>

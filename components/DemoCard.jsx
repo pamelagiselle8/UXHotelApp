@@ -106,7 +106,6 @@ export function DemoCard({ imageUrl }) {
                 borderRadius="$10"
                 theme="active"
                 backgroundColor={"#8B66E5"}
-                color={"#F0F2F6"}
               >
                 <Paragraph color="white" size={"$5"}>
                   Reservar

@@ -1,5 +1,5 @@
-// card.jsx
 import React from "react";
+import { Dimensions } from "react-native";
 import {
   Card,
   H2,
@@ -15,9 +15,13 @@ import {
   YGroup,
   ListItem,
   H3,
+  View,
 } from "tamagui";
 import { Heart, MapPin, Star } from "@tamagui/lucide-icons";
 import { useState } from "react";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 // const [isLiked, setIsLiked] = useState(false);
 
@@ -26,18 +30,19 @@ export function DemoCard({ imageUrl }) {
   //   setIsLiked(!isLiked); // Cambia el estado del like al contrario
   // };
   return (
-    <Card elevate size="$4" borderRadius="$6">
+    <Card elevate size="$4" borderRadius="$6" marginBottom="$3">
       <Image
-        alignSelf="center"
+        alignSelf="left"
         source={{
-          width: 350,
-          height: 200,
+          width: 1,
+          height: 170,
           uri: imageUrl,
         }}
-        marginRight="$5"
+        width={windowWidth - 45}
         borderBottomRightRadius="$6"
+        borderTopLeftRadius="$6"
       />
-      <Card.Header padded>
+      <Card.Header paddingTop="$2">
         <YGroup separator={<Separator />}>
           <YGroup.Item>
             <ListItem
@@ -61,7 +66,7 @@ export function DemoCard({ imageUrl }) {
               />
             </ListItem>
 
-            <ListItem hoverTheme>
+            <ListItem hoverTheme paddingTop="$1">
               <Image
                 source={{
                   // Icono map pin
@@ -76,7 +81,7 @@ export function DemoCard({ imageUrl }) {
                 Purwokerto, Jateng
               </Paragraph>
             </ListItem>
-            <ListItem hoverTheme>
+            <ListItem hoverTheme paddingTop="$1">
               <Image
                 source={{
                   // Icono estrella

@@ -23,6 +23,7 @@ export function Inicio() {
           paddingTop="$6"
           position="absolute"
           color="white"
+          fontStyle="b"
         >
           Explora
         </H2>

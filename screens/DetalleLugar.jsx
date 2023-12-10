@@ -4,6 +4,7 @@ import {
   View,
   Heading,
   H3,
+  H2,
   H4,
   Group,
   XGroup,
@@ -35,17 +36,44 @@ const windowHeight = Dimensions.get("window").height;
 export function DetalleLugar() {
   return (
     <ScrollView width={windowWidth}>
-      <View>
+      <View
+        width={windowWidth}
+        alignSelf="center"
+        position="absolute"
+        paddingTop="$3"
+      >
         <Image
           source={{
-            uri: "https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg",
+            uri: "https://cdn.discordapp.com/attachments/1181346648002134116/1182762523821351133/Sin_titulo-2.png?ex=6585e070&is=65736b70&hm=d4927caf1631f037bf00be7c37517aa09f5a70967ed3502f8be5e40e696ed7e1&",
             width: 1,
             height: 230,
           }}
           width={windowWidth}
           // borderRadius="$12"
-          borderTopRightRadius="$12"
+        />
+        <H3
+          alignSelf="center"
+          paddingTop="$8"
+          position="absolute"
+          color="white"
+          fontStyle="b"
+        >
+          Royal Palm Heritage
+        </H3>
+      </View>
+
+      <View paddingTop="$12">
+        <Image
+          source={{
+            uri: "https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg",
+            width: 100,
+            height: 250,
+          }}
+          width={windowWidth - 50}
+          // borderRadius="$12"
+          borderRadius="$10"
           marginTop="$3"
+          alignSelf="center"
         />
 
         <H4 fontStyle="b" alignSelf="left" paddingLeft="$4" paddingTop="$4">

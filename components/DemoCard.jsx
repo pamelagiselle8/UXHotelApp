@@ -51,7 +51,7 @@ export function DemoCard({ imageUrl }) {
               // onPress={onHeartPress}
               // iconAfter={Heart}
             >
-              <Paragraph size="$8" fontWeight="100" left="$-3">
+              <Paragraph size="$8" left="$-3">
                 {/* VARIABLE */}
                 Royal Palm Heritage
               </Paragraph>

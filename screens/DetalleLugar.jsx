@@ -3,14 +3,28 @@ import {
   Image,
   View,
   Heading,
+  Group,
   XGroup,
+  YGroup,
   XStack,
+  YStack,
   ListItem,
   Separator,
   Button,
+  Paragraph,
 } from "tamagui";
-import { Activity, Airplay } from "@tamagui/lucide-icons";
+import {
+  Wifi,
+  Tv2,
+  Tv,
+  ShowerHead,
+  Coffee,
+  BedDouble,
+  Bike,
+  Cat,
+} from "@tamagui/lucide-icons";
 import { Dimensions } from "react-native";
+import Servicios from "../components/Servicios";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -18,19 +32,8 @@ const windowHeight = Dimensions.get("window").height;
 export function DetalleLugar() {
   return (
     <ScrollView width={windowWidth} paddingTop="$4">
-      <View width={windowWidth} alignSelf="center">
-        <XGroup size="$10" $gtSm={{ size: "$5" }}>
-          <XGroup.Item>
-            <ListItem size="$3" icon={Activity}>
-              First
-            </ListItem>
-          </XGroup.Item>
-          {/* <XGroup.Item>
-            <ListItem size="$3" icon={Airplay}>
-              Second
-            </ListItem>
-          </XGroup.Item> */}
-        </XGroup>
+      <View>
+        <Servicios icons={[1, 6, 4]} />
       </View>
     </ScrollView>
   );

@@ -1,4 +1,4 @@
-import { XGroup, ListItem, H1 } from "tamagui";
+import { XGroup, ListItem, H1, Paragraph } from "tamagui";
 import { Dimensions } from "react-native";
 import {
   Wifi,
@@ -14,45 +14,81 @@ function getIcono(icono) {
   switch (icono) {
     case 1:
       return (
-        <ListItem width="5" size="$5" icon={Wifi}>
-          Wifi
+        <ListItem
+          width="5"
+          size="$5"
+          icon={Wifi}
+          color="$color.blue10Light"
+          paddingRight=""
+        >
+          <Paragraph>Wifi</Paragraph>
         </ListItem>
       );
     case 2:
       return (
-        <ListItem width="5" size="$5" icon={Cat}>
-          Pet Friendly
+        <ListItem
+          width="5"
+          size="$5"
+          icon={Cat}
+          color="$color.purple10Light"
+          paddingRight=""
+        >
+          <Paragraph>Pet Friendly</Paragraph>
         </ListItem>
       );
     case 3:
       return (
-        <ListItem width="5" size="$5" icon={Tv2}>
-          Netflix
+        <ListItem width="5" size="$5" icon={Tv2} color="red" paddingRight="">
+          <Paragraph>Netflix</Paragraph>
         </ListItem>
       );
     case 4:
       return (
-        <ListItem width="5" size="$5" icon={Bike}>
-          Ciclismo
+        <ListItem
+          width="5"
+          size="$5"
+          icon={Bike}
+          color="$color.green10Light"
+          paddingRight=""
+        >
+          <Paragraph>Ciclismo</Paragraph>
         </ListItem>
       );
     case 5:
       return (
-        <ListItem width="5" size="$5" icon={Coffee}>
-          Desayuno
+        <ListItem
+          width="5"
+          size="$5"
+          icon={Coffee}
+          color="$color.orange10Dark"
+          paddingRight=""
+        >
+          <Paragraph>Desayuno</Paragraph>
         </ListItem>
       );
     case 6: {
       return (
-        <ListItem width="5" size="$5" icon={ShowerHead}>
-          Agua caliente
+        <ListItem
+          width="5"
+          size="$5"
+          icon={ShowerHead}
+          color="red"
+          paddingRight=""
+        >
+          <Paragraph>Agua caliente</Paragraph>
         </ListItem>
       );
     }
     case 7: {
       return (
-        <ListItem width="5" size="$5" icon={BedDouble}>
-          King-size
+        <ListItem
+          width="5"
+          size="$5"
+          icon={BedDouble}
+          color="$pink10"
+          paddingRight=""
+        >
+          <Paragraph>King-size</Paragraph>
         </ListItem>
       );
     }
@@ -63,7 +99,7 @@ function getIcono(icono) {
 
 export function Servicios(props) {
   return (
-    <XGroup alignSelf="center">
+    <XGroup alignSelf="center" left="$-3">
       {props.icons.map((element, index) => (
         <XGroup.Item key={index}>{getIcono(element)}</XGroup.Item>
       ))}

@@ -2,33 +2,16 @@ import {
   ScrollView,
   Image,
   View,
-  Heading,
   H3,
-  H2,
   H4,
-  Group,
-  XGroup,
-  YGroup,
+  H6,
   XStack,
-  YStack,
-  ListItem,
-  Separator,
-  Button,
   Paragraph,
 } from "tamagui";
-import {
-  Wifi,
-  Tv2,
-  Tv,
-  ShowerHead,
-  Coffee,
-  BedDouble,
-  Bike,
-  Cat,
-} from "@tamagui/lucide-icons";
 import { Dimensions } from "react-native";
 import Servicios from "../components/Servicios";
 import { DemoCard } from "../components/DemoCard";
+import DateChooser from "../components/DateChooser";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -90,6 +73,17 @@ export function DetalleLugar() {
           minim veniam.
         </Paragraph>
       </View>
+
+      <XStack alignSelf="center" paddingVertical="$2">
+        <View alignSelf="left" alignItems="center" paddingRight="$6">
+          <H6 paddingTop="$4">Entrada</H6>
+          <DateChooser />
+        </View>
+        <View alignSelf="right" alignItems="center">
+          <H6 paddingTop="$4">Salida</H6>
+          <DateChooser />
+        </View>
+      </XStack>
     </ScrollView>
   );
 }

@@ -16,6 +16,8 @@ import {
   ListItem,
   H3,
   View,
+  YStack,
+  CardFooter,
 } from "tamagui";
 import { Heart } from "@tamagui/lucide-icons";
 import { useState } from "react";
@@ -43,7 +45,7 @@ export function DemoCard({ imageUrl, navigation }) {
     Rubik_600SemiBold,
   });
   return (
-    <Card elevate size="$3" borderRadius="$6" marginBottom="$3">
+    <Card elevate borderRadius="$6" marginBottom="$3">
       <Image
         marginRight="$5"
         source={{
@@ -112,15 +114,22 @@ export function DemoCard({ imageUrl, navigation }) {
               <H6 fontFamily={"Rubik_300Light"}>(4368 reviews)</H6>
             </ListItem>
           </YGroup.Item>
+
           <YGroup.Item>
-            <ListItem hoverTheme>
-              {/* VARIABLE */}
-              <H2 fontFamily={"Rubik_600SemiBold"}>$245</H2>
-              <Paragraph fontFamily={"Rubik_400Regular"} marginLeft={"$-4.5"}>
-                /noche
-              </Paragraph>
+            <ListItem>
+              <YStack alignItems="center" marginTop="$2" marginBottom="$-2">
+                {/* VARIABLE */}
+                <H2 fontFamily={"Rubik_600SemiBold"} size={"$9"}>
+                  $245
+                </H2>
+                <Paragraph fontFamily={"Rubik_400Regular"} marginLeft={"$-5"}>
+                  /noche
+                </Paragraph>
+              </YStack>
+
               <Button
                 marginTop="$2.5"
+                marginBottom="$-2"
                 borderRadius="$10"
                 theme="active"
                 backgroundColor={"#8B66E5"}

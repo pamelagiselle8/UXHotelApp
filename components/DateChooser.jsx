@@ -8,7 +8,7 @@ const windowWidth = Dimensions.get("window").width;
 
 export function DateChooser(hoy) {
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
-  const startDate = getFormatedDate(new Date(), "YYYY/MM/DD");
+  const startDate = getFormatedDate(new Date(), "DD/MM/YYYY");
 
   const [selectedStartDate, setSelectedStartDate] = useState(startDate);
   const [startedDate, setStartedDate] = useState("");

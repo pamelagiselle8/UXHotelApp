@@ -7,11 +7,13 @@ import {
   H6,
   XStack,
   Paragraph,
+  Button,
 } from "tamagui";
 import { Dimensions } from "react-native";
 import Servicios from "../components/Servicios";
 import { DemoCard } from "../components/DemoCard";
 import DateChooser from "../components/DateChooser";
+import DemoForm from "../components/DemoForm";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -32,7 +34,6 @@ export function DetalleLugar() {
             height: 230,
           }}
           width={windowWidth}
-          // borderRadius="$12"
         />
         <H3
           alignSelf="center"
@@ -53,7 +54,6 @@ export function DetalleLugar() {
             height: 250,
           }}
           width={windowWidth - 50}
-          // borderRadius="$12"
           borderRadius="$10"
           marginTop="$3"
           alignSelf="center"
@@ -84,6 +84,20 @@ export function DetalleLugar() {
           <DateChooser />
         </View>
       </XStack>
+
+      <Button
+        marginTop="$2.5"
+        borderRadius="$10"
+        theme="active"
+        backgroundColor={"#8B66E5"}
+        width="$12"
+      >
+        <Paragraph color="white" size={"$5"}>
+          Ir a pagar
+        </Paragraph>
+      </Button>
+
+      <DemoForm />
     </ScrollView>
   );
 }

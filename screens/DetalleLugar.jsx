@@ -15,7 +15,7 @@ import DemoForm from "../components/DemoForm";
 import DemoSlider from "../components/DemoSlider";
 
 const windowWidth = Dimensions.get("window").width;
-
+let servicios = [1, 2, 3];
 export function DetalleLugar() {
   return (
     <ScrollView width={windowWidth}>
@@ -58,9 +58,9 @@ export function DetalleLugar() {
         />
 
         <H4 fontStyle="b" alignSelf="left" paddingLeft="$4" paddingTop="$4">
-          Información
+          {servicios.length > 0 ? "Servicios" : ""}
         </H4>
-        <Servicios icons={[1, 5, 2]} />
+        <Servicios icons={servicios} />
 
         <H4 fontStyle="b" alignSelf="left" paddingTop="$4" paddingLeft="$4">
           Ubicación
@@ -82,9 +82,8 @@ export function DetalleLugar() {
           <DateChooser />
         </View>
       </XStack>
-
+      <DemoSlider />
       <DemoForm />
-      <DemoSlider width="200" />
     </ScrollView>
   );
 }

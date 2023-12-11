@@ -23,7 +23,7 @@ export function DetalleLugar() {
         width={windowWidth}
         alignSelf="center"
         position="absolute"
-        paddingTop="$3"
+        // paddingTop="$3"
       >
         <Image
           source={{
@@ -35,7 +35,7 @@ export function DetalleLugar() {
         />
         <H3
           alignSelf="center"
-          paddingTop="$8"
+          paddingTop="$4"
           position="absolute"
           color="white"
           fontStyle="b"
@@ -44,7 +44,7 @@ export function DetalleLugar() {
         </H3>
       </View>
 
-      <View paddingTop="$12">
+      <View paddingTop="$10">
         <Image
           source={{
             uri: "https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg",

@@ -25,12 +25,18 @@ const windowHeight = Dimensions.get("window").height;
 
 // const [isLiked, setIsLiked] = useState(false);
 
-export function DemoCard({ imageUrl }) {
+export function DemoCard({ imageUrl, navigation }) {
   // const onHeartPress = () => {
   //   setIsLiked(!isLiked); // Cambia el estado del like al contrario
   // };
   return (
-    <Card elevate size="$3" borderRadius="$6" marginBottom="$3">
+    <Card
+      elevate
+      size="$3"
+      borderRadius="$6"
+      marginBottom="$3"
+      backgroundColor="white"
+    >
       <Image
         marginRight="$5"
         source={{
@@ -106,6 +112,7 @@ export function DemoCard({ imageUrl }) {
                 borderRadius="$10"
                 theme="active"
                 backgroundColor={"#8B66E5"}
+                onPress={() => navigation.navigate("Detalles")}
               >
                 <Paragraph color="white" size={"$5"}>
                   Reservar

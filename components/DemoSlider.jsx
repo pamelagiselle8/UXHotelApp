@@ -1,36 +1,44 @@
-import { H5, Slider, View, styled } from "tamagui";
+import { H5, Slider, Text, View, styled } from "tamagui";
 import { useState } from "react";
 
 const CustomSliderTrack = styled(Slider.Track, {
-  //   backgroundColor: "black",
-  //   outlineColor: "blue",
-  backgroundColor: "red",
+  backgroundColor: "lightgray",
 });
 
 export function DemoSlider() {
-  const [sliderValue, setSliderValue] = useState(1);
+  const [selectedValue, setSelectedValue] = useState(1);
 
-  function handleSliderChange(newValue) {
-    setSliderValue(newValue);
+  function handleSliderChange(props) {
+    setSelectedValue(props);
   }
 
   return (
     <View paddingVertical="$5" alignItems="center">
-      <H5>{sliderValue}</H5>
+      <H5 paddingBottom="$5">
+        {selectedValue} persona{selectedValue > 1 ? "s" : ""}
+      </H5>
       <Slider
         size="$3"
         width={200}
-        defaultValue={[sliderValue]}
-        max={6}
-        step={1}
-        onChange={(value) => {
-          setSliderValue(value);
+        defaultValue={[1]}
+        onValueChange={(value) => {
+          handleSliderChange(value);
         }}
+        // VARIABLE AQUI
+        max={6}
+        min={1}
+        step={1}
       >
         <CustomSliderTrack>
-          <Slider.TrackActive />
+          <Slider.TrackActive backgroundColor="#8B66E5" borderColor="#8B66E5" />
         </CustomSliderTrack>
-        <Slider.Thumb circular index={0} />
+        <Slider.Thumb
+          circular
+          index={0}
+          size="$1.5"
+          backgroundColor="#8B66E5"
+          borderColor="#8B66E5"
+        />
       </Slider>
     </View>
   );

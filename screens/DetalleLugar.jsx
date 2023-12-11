@@ -10,7 +10,6 @@ import {
 } from "tamagui";
 import { Dimensions } from "react-native";
 import Servicios from "../components/Servicios";
-import { DemoCard } from "../components/DemoCard";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
 import DemoSlider from "../components/DemoSlider";

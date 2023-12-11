@@ -7,16 +7,15 @@ import {
   H6,
   XStack,
   Paragraph,
-  Button,
 } from "tamagui";
 import { Dimensions } from "react-native";
 import Servicios from "../components/Servicios";
 import { DemoCard } from "../components/DemoCard";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
+import DemoSlider from "../components/DemoSlider";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 export function DetalleLugar() {
   return (
@@ -86,6 +85,7 @@ export function DetalleLugar() {
       </XStack>
 
       <DemoForm />
+      <DemoSlider width="200" />
     </ScrollView>
   );
 }

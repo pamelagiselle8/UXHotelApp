@@ -17,17 +17,31 @@ import {
   H3,
   View,
 } from "tamagui";
-import { Heart, BookmarkPlus } from "@tamagui/lucide-icons";
+import { Heart } from "@tamagui/lucide-icons";
 import { useState } from "react";
+import {
+  useFonts,
+  Rubik_300Light,
+  Rubik_400Regular,
+  Rubik_500Medium,
+  Rubik_700Bold,
+  Rubik_600SemiBold,
+} from "@expo-google-fonts/rubik";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 export function DemoCard({ imageUrl, navigation }) {
   const [isLiked, setIsLiked] = useState(false);
   const onHeartPress = () => {
     setIsLiked(!isLiked);
   };
+  let [fontsLoaded] = useFonts({
+    Rubik_300Light,
+    Rubik_400Regular,
+    Rubik_500Medium,
+    Rubik_700Bold,
+    Rubik_600SemiBold,
+  });
   return (
     <Card elevate size="$3" borderRadius="$6" marginBottom="$3">
       <Image
@@ -56,7 +70,7 @@ export function DemoCard({ imageUrl, navigation }) {
               }
               onPress={onHeartPress}
             >
-              <Paragraph size="$8" left="$-3">
+              <Paragraph size="$8" left="$-3" fontFamily={"Rubik_600SemiBold"}>
                 {/* VARIABLE */}
                 Royal Palm Heritage
               </Paragraph>
@@ -72,7 +86,11 @@ export function DemoCard({ imageUrl, navigation }) {
                 }}
                 left="$-2"
               />
-              <Paragraph size={"$5"} left="$-12">
+              <Paragraph
+                size={"$5"}
+                left="$-12"
+                fontFamily={"Rubik_400Regular"}
+              >
                 {/* VARIABLE */}
                 Purwokerto, Jateng
               </Paragraph>
@@ -88,15 +106,19 @@ export function DemoCard({ imageUrl, navigation }) {
                 left="$-2"
               />
               {/* VARIABLE */}
-              <H4 left="$-6">4.5</H4>
-              <H6>(4368 reviews)</H6>
+              <H4 left="$-8" fontFamily={"Rubik_400Regular"}>
+                4.5
+              </H4>
+              <H6 fontFamily={"Rubik_300Light"}>(4368 reviews)</H6>
             </ListItem>
           </YGroup.Item>
           <YGroup.Item>
             <ListItem hoverTheme>
               {/* VARIABLE */}
-              <H2>$245 </H2>
-              /noche
+              <H2 fontFamily={"Rubik_600SemiBold"}>$245</H2>
+              <Paragraph fontFamily={"Rubik_400Regular"} marginLeft={"$-4.5"}>
+                /noche
+              </Paragraph>
               <Button
                 marginTop="$2.5"
                 borderRadius="$10"
@@ -104,7 +126,11 @@ export function DemoCard({ imageUrl, navigation }) {
                 backgroundColor={"#8B66E5"}
                 onPress={() => navigation.navigate("Detalles")}
               >
-                <Paragraph color="white" size={"$5"}>
+                <Paragraph
+                  color="white"
+                  size={"$5"}
+                  fontFamily={"Rubik_600SemiBold"}
+                >
                   Reservar
                 </Paragraph>
               </Button>

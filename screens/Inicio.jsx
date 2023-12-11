@@ -1,12 +1,21 @@
 import { Heading, H2, H5, ScrollView, View, Image, Separator } from "tamagui";
 import { DemoCard } from "../components/DemoCard";
-import { Dimensions } from "react-native";
+import { Dimensions, Text } from "react-native";
 import { useEffect } from "react";
+import {
+  useFonts,
+  Rubik_300Light,
+  Rubik_700Bold,
+} from "@expo-google-fonts/rubik";
 // import { getHospedajes } from "../API/APICasas";
 
 const windowWidth = Dimensions.get("window").width;
 
 export function Inicio({ navigation }) {
+  let [fontsLoaded] = useFonts({
+    Rubik_300Light,
+    Rubik_700Bold,
+  });
   // useEffect(() => {
   //   const fetchData = () => {
   //     try {
@@ -37,7 +46,7 @@ export function Inicio({ navigation }) {
           paddingTop="$6"
           position="absolute"
           color="white"
-          fontStyle="b"
+          fontFamily={"Rubik_700Bold"}
         >
           Explora
         </H2>
@@ -47,8 +56,10 @@ export function Inicio({ navigation }) {
           paddingBottom="$5"
           position="absolute"
           color="mistyrose"
+          fontFamily={"Rubik_300Light"}
+          fontSize={18}
         >
-          destacados
+          DESTACADOS
         </H5>
       </View>
 

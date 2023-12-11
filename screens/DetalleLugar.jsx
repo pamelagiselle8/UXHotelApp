@@ -85,18 +85,6 @@ export function DetalleLugar() {
         </View>
       </XStack>
 
-      <Button
-        marginTop="$2.5"
-        borderRadius="$10"
-        theme="active"
-        backgroundColor={"#8B66E5"}
-        width="$12"
-      >
-        <Paragraph color="white" size={"$5"}>
-          Ir a pagar
-        </Paragraph>
-      </Button>
-
       <DemoForm />
     </ScrollView>
   );

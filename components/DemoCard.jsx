@@ -17,26 +17,19 @@ import {
   H3,
   View,
 } from "tamagui";
-import { Heart, MapPin, Star } from "@tamagui/lucide-icons";
+import { Heart, BookmarkPlus } from "@tamagui/lucide-icons";
 import { useState } from "react";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-// const [isLiked, setIsLiked] = useState(false);
-
 export function DemoCard({ imageUrl, navigation }) {
-  // const onHeartPress = () => {
-  //   setIsLiked(!isLiked); // Cambia el estado del like al contrario
-  // };
+  const [isLiked, setIsLiked] = useState(false);
+  const onHeartPress = () => {
+    setIsLiked(!isLiked);
+  };
   return (
-    <Card
-      elevate
-      size="$3"
-      borderRadius="$6"
-      marginBottom="$3"
-      backgroundColor="white"
-    >
+    <Card elevate size="$3" borderRadius="$6" marginBottom="$3">
       <Image
         marginRight="$5"
         source={{
@@ -53,23 +46,20 @@ export function DemoCard({ imageUrl, navigation }) {
           <YGroup.Item>
             <ListItem
               hoverTheme
-              // iconAfter={isLiked ? HeartFilled : Heart}
-              // onPress={onHeartPress}
-              // iconAfter={Heart}
+              iconAfter={
+                <Heart
+                  size="$1.5"
+                  color="red"
+                  fill="red"
+                  fillOpacity={isLiked ? "$1" : "0"}
+                />
+              }
+              onPress={onHeartPress}
             >
               <Paragraph size="$8" left="$-3">
                 {/* VARIABLE */}
                 Royal Palm Heritage
               </Paragraph>
-              <Image
-                // Icono corazon
-                source={{
-                  uri: "https://clipart-library.com/images/RkiMyoycj.png",
-                  width: 30,
-                  height: 35,
-                }}
-                top="$1.5"
-              />
             </ListItem>
 
             <ListItem hoverTheme paddingTop="$1">

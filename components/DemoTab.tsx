@@ -15,10 +15,8 @@ import {
   YStack,
   styled,
 } from "tamagui";
-import DetalleLugar from "../screens/DetalleLugar";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 const demos = ["background", "underline"] as const;
 
@@ -124,10 +122,9 @@ const TabsAdvancedBackground = ({ navigation }) => {
   return (
     <Tabs
       value={currentTab}
-      onValueChange={setCurrentTab}
       orientation="horizontal"
       size="$5"
-      padding="$3"
+      padding="$2.5"
       flexDirection="column"
       activationMode="manual"
       backgroundColor="$background"

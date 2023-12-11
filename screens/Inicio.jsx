@@ -1,11 +1,25 @@
 import { Heading, H2, H5, ScrollView, View, Image, Separator } from "tamagui";
 import { DemoCard } from "../components/DemoCard";
 import { Dimensions } from "react-native";
+import { useEffect } from "react";
+// import { getHospedajes } from "../API/APICasas";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 export function Inicio({ navigation }) {
+  // useEffect(() => {
+  //   const fetchData = () => {
+  //     try {
+  //       const data = getHospedajes();
+  //       // console.log(data);
+  //     } catch (error) {
+  //       console.error("Error al cargar datos:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <ScrollView paddingTop="$4">
       <View width={windowWidth} alignSelf="center" position="absolute">

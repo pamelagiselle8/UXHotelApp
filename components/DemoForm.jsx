@@ -32,14 +32,13 @@ export function DemoForm() {
 
   return (
     <Form
+      backgroundColor="$backgroundTransparent"
       alignItems="center"
       width={windowWidth}
       height="$10"
       onSubmit={() => setStatus("submitting")}
-      backgroundColor="$background"
       borderColor="$background"
       paddingTop="$5"
-      //
     >
       <Form.Trigger asChild disabled={status !== "off"}>
         <Button

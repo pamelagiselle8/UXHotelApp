@@ -20,6 +20,7 @@ function getIcono(icono) {
           icon={Wifi}
           color="$color.blue10Light"
           paddingRight=""
+          backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Wifi</Paragraph>
         </ListItem>
@@ -32,13 +33,21 @@ function getIcono(icono) {
           icon={Cat}
           color="$color.purple10Light"
           paddingRight=""
+          backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Pet Friendly</Paragraph>
         </ListItem>
       );
     case 3:
       return (
-        <ListItem width="5" size="$5" icon={Tv2} color="red" paddingRight="">
+        <ListItem
+          width="5"
+          size="$5"
+          icon={Tv2}
+          color="red"
+          paddingRight=""
+          backgroundColor="$backgroundTransparent"
+        >
           <Paragraph>Netflix</Paragraph>
         </ListItem>
       );
@@ -50,6 +59,7 @@ function getIcono(icono) {
           icon={Bike}
           color="$color.green10Light"
           paddingRight=""
+          backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Ciclismo</Paragraph>
         </ListItem>
@@ -62,6 +72,7 @@ function getIcono(icono) {
           icon={Coffee}
           color="$color.orange10Dark"
           paddingRight=""
+          backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Desayuno</Paragraph>
         </ListItem>
@@ -74,6 +85,7 @@ function getIcono(icono) {
           icon={ShowerHead}
           color="red"
           paddingRight=""
+          backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Agua caliente</Paragraph>
         </ListItem>
@@ -87,6 +99,7 @@ function getIcono(icono) {
           icon={BedDouble}
           color="$pink10"
           paddingRight=""
+          backgroundColor="$backgroundTransparent"
         >
           <Paragraph>King-size</Paragraph>
         </ListItem>

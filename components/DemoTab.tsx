@@ -15,10 +15,8 @@ import {
   YStack,
   styled,
 } from "tamagui";
-import DetalleLugar from "../screens/DetalleLugar";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 const demos = ["background", "underline"] as const;
 
@@ -27,7 +25,8 @@ const demosTitle: Record<(typeof demos)[number], string> = {
 
   underline: "Underline Indicator",
 };
-export const DemoTab = () => {
+
+export const DemoTab = ({ navigation }) => {
   const [demoIndex, setDemoIndex] = useState(0);
 
   const demo = demos[demoIndex];
@@ -37,7 +36,7 @@ export const DemoTab = () => {
       {demo === "underline" ? (
         <TabsAdvancedUnderline />
       ) : (
-        <TabsAdvancedBackground />
+        <TabsAdvancedBackground navigation={navigation} />
       )}
       <XStack
         alignItems="center"
@@ -57,7 +56,7 @@ export const DemoTab = () => {
     </>
   );
 };
-const TabsAdvancedBackground = () => {
+const TabsAdvancedBackground = ({ navigation }) => {
   const [tabState, setTabState] = useState<{
     currentTab: string;
     /**
@@ -123,10 +122,9 @@ const TabsAdvancedBackground = () => {
   return (
     <Tabs
       value={currentTab}
-      onValueChange={setCurrentTab}
       orientation="horizontal"
       size="$5"
-      padding="$3"
+      padding="$2.5"
       flexDirection="column"
       activationMode="manual"
       backgroundColor="$background"
@@ -149,10 +147,10 @@ const TabsAdvancedBackground = () => {
         >
           {/* *************************** SCREENS AQUI *************************** */}
           <Tabs.Content value="tab1" width={windowWidth}>
-            <DetalleLugar />
+            <Inicio navigation={navigation} />
           </Tabs.Content>
           <Tabs.Content value="tab2" width={windowWidth}>
-            <Inicio />
+            {/* <DetalleLugar /> */}
           </Tabs.Content>
           <Tabs.Content value="tab3" width={windowWidth}>
             <H5 textAlign="center">{currentTab}</H5>

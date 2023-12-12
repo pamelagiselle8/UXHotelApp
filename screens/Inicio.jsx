@@ -1,11 +1,34 @@
 import { Heading, H2, H5, ScrollView, View, Image, Separator } from "tamagui";
 import { DemoCard } from "../components/DemoCard";
-import { Dimensions } from "react-native";
+import { Dimensions, Text } from "react-native";
+import { useEffect } from "react";
+import {
+  useFonts,
+  Rubik_300Light,
+  Rubik_700Bold,
+} from "@expo-google-fonts/rubik";
+// import { getHospedajes } from "../API/APICasas";
 
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
-export function Inicio() {
+export function Inicio({ navigation }) {
+  let [fontsLoaded] = useFonts({
+    Rubik_300Light,
+    Rubik_700Bold,
+  });
+  // useEffect(() => {
+  //   const fetchData = () => {
+  //     try {
+  //       const data = getHospedajes();
+  //       // console.log(data);
+  //     } catch (error) {
+  //       console.error("Error al cargar datos:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <ScrollView paddingTop="$4">
       <View width={windowWidth} alignSelf="center" position="absolute">
@@ -23,6 +46,7 @@ export function Inicio() {
           paddingTop="$6"
           position="absolute"
           color="white"
+          fontFamily={"Rubik_700Bold"}
         >
           Explora
         </H2>
@@ -32,15 +56,26 @@ export function Inicio() {
           paddingBottom="$5"
           position="absolute"
           color="mistyrose"
+          fontFamily={"Rubik_300Light"}
+          fontSize={18}
         >
-          destacados
+          DESTACADOS
         </H5>
       </View>
 
       <View alignSelf="center" paddingTop="$15">
-        <DemoCard imageUrl="https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg" />
-        <DemoCard imageUrl="https://forbes.es/wp-content/uploads/2023/05/Airbnb-Negocio_01.jpg?format=webp&width=831&height=467" />
-        <DemoCard imageUrl="https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16%3A9/w_2560%252Cc_limit/airbnb%252520luxe.jpg?format=webp&width=831&height=467" />
+        <DemoCard
+          navigation={navigation}
+          imageUrl="https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg"
+        />
+        <DemoCard
+          navigation={navigation}
+          imageUrl="https://forbes.es/wp-content/uploads/2023/05/Airbnb-Negocio_01.jpg?format=webp&width=831&height=467"
+        />
+        <DemoCard
+          navigation={navigation}
+          imageUrl="https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16%3A9/w_2560%252Cc_limit/airbnb%252520luxe.jpg?format=webp&width=831&height=467"
+        />
         <Separator paddingTop="$4" />
       </View>
     </ScrollView>

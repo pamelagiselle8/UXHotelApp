@@ -10,6 +10,13 @@ export function DateChooser({ fechaInicio }) {
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
   const startDate = getFormatedDate(fechaInicio, "YYYY/MM/DD");
 
+  var fecha = new Date();
+  console.log("pera");
+  console.log(fecha);
+
+  fecha.setDate(fecha.getDate() + 1);
+  console.log(fecha);
+
   const [selectedStartDate, setSelectedStartDate] = useState("");
   const [startedDate, setStartedDate] = useState(startDate);
 

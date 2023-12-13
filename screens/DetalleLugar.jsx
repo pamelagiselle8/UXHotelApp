@@ -19,6 +19,12 @@ const windowWidth = Dimensions.get("window").width;
 export function DetalleLugar({ route, navigation }) {
   const { lugar } = route.params;
   let servicios = lugar.servicios;
+
+  function getFechaManana() {
+    var fecha = new Date();
+    fecha.setDate(fecha.getDate() + 1);
+    return fecha;
+  }
   return (
     <ScrollView width={windowWidth}>
       <View width={windowWidth} position="absolute">
@@ -75,7 +81,7 @@ export function DetalleLugar({ route, navigation }) {
         </View>
         <View alignSelf="right" alignItems="center">
           <H6 paddingTop="$4">Salida</H6>
-          <DateChooser fechaInicio={new Date()} />
+          <DateChooser fechaInicio={getFechaManana()} />
         </View>
       </XStack>
       <DemoSlider />

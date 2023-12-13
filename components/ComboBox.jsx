@@ -1,7 +1,6 @@
 import { Check, ChevronDown, ChevronUp } from "@tamagui/lucide-icons";
-
-import { useMemo, useState } from "react";
-
+import { useMemo, useState, useEffect } from "react";
+import { getLugares } from "../API/LugaresAPI";
 import {
   Adapt,
   FontSizeTokens,
@@ -15,7 +14,23 @@ import {
   getFontSize,
 } from "tamagui";
 
-export function ComboBox() {
+export function ComboBox({ categoria, callbackCategoria }) {
+  const [lugares, setLugares] = useState([]);
+  const categorias = [...new Set(lugares.map((lugar) => lugar.categoria))];
+  const items = categorias.map((categoria, index) => ({
+    name: categoria,
+    id: index,
+  }));
+
+  console.log(items);
+  useEffect(() => {
+    const fetchDatos = async () => {
+      const lugaresData = await getLugares();
+      setLugares(lugaresData);
+    };
+    fetchDatos();
+  }, []);
+
   const [val, setVal] = useState("");
   return (
     <Select
@@ -25,7 +40,7 @@ export function ComboBox() {
       disablePreventBodyScroll
     >
       <Select.Trigger width={220} iconAfter={<ChevronDown color="#6155CC" />}>
-        <Select.Value placeholder="Seleccionar" />
+        <Select.Value placeholder="Seleccionar categoría" color={"#6155CC"} />
       </Select.Trigger>
       <Adapt when="sm" platform="touch">
         <Sheet
@@ -107,9 +122,16 @@ export function ComboBox() {
 
 export default ComboBox;
 
-const items = [
-  { name: "Hotel" },
-  { name: "Hostal" },
-  { name: "Apartamento" },
-  { name: "Villa" },
-];
+// const items = [
+//   { name: "Hotel" },
+//   { name: "Hostal" },
+//   { name: "Apartamento" },
+//   { name: "Villa" },
+// ];
+// const lugares = [
+//   { name: "Lugar1", categoria: "Hotel" },
+//   { name: "Lugar2", categoria: "Hostal" },
+//   { name: "Lugar3", categoria: "Apartamento" },
+//   { name: "Lugar4", categoria: "Villa" },
+//   // Otros lugares...
+// ];

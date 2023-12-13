@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Inicio from "../screens/Inicio";
 import DetalleLugar from "../screens/DetalleLugar";
-import { Home, Search, User, User2 } from "@tamagui/lucide-icons";
+import { Home, Search, User2 } from "@tamagui/lucide-icons";
 import Buscar from "../screens/Buscar";
 import Perfil from "../screens/Perfil";
 

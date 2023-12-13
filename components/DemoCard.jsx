@@ -4,20 +4,14 @@ import {
   Card,
   H2,
   H4,
-  H5,
   H6,
   Paragraph,
-  XStack,
   Button,
   Image,
   Separator,
-  Label,
   YGroup,
   ListItem,
-  H3,
-  View,
   YStack,
-  CardFooter,
 } from "tamagui";
 import { Heart } from "@tamagui/lucide-icons";
 import { useState } from "react";
@@ -32,7 +26,7 @@ import {
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DemoCard({ imageUrl, navigation }) {
+export function DemoCard({ lugar, navigation }) {
   const [isLiked, setIsLiked] = useState(false);
   const onHeartPress = () => {
     setIsLiked(!isLiked);

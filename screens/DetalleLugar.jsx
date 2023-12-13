@@ -8,7 +8,8 @@ import {
   XStack,
   Paragraph,
 } from "tamagui";
-import { Dimensions, useState } from "react-native";
+import { Dimensions } from "react-native";
+import { useState } from "react";
 import Servicios from "../components/Servicios";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
@@ -20,20 +21,22 @@ export function DetalleLugar({ route, navigation }) {
   const { lugar } = route.params;
   let servicios = lugar.servicios;
 
-  // const [date, setDate] = useState("");
-  // setDate("2023-12-12");
-
-  function actualizarDate(newDate) {
-    // setDate(newDate);
-    console.log("PAPAYA");
-    console.log(newDate);
-  }
-
   function getFechaManana() {
     var fecha = new Date();
     fecha.setDate(fecha.getDate() + 1);
     return fecha;
   }
+
+  const [fechaEntrada, setFechaEntrada] = useState(new Date());
+  function actualizarFechaEntrada(newDate) {
+    setFechaEntrada(newDate);
+  }
+
+  const [fechaSalida, setFechaSalida] = useState(getFechaManana());
+  function actualizarFechaSalida(newDate) {
+    setFechaSalida(newDate);
+  }
+
   return (
     <ScrollView width={windowWidth}>
       <View width={windowWidth} position="absolute">
@@ -88,12 +91,15 @@ export function DetalleLugar({ route, navigation }) {
           <H6 paddingTop="$4">Entrada</H6>
           <DateChooser
             fechaInicio={new Date()}
-            callbackActualizarDate={actualizarDate}
+            callbackActualizarFecha={actualizarFechaEntrada}
           />
         </View>
         <View alignSelf="right" alignItems="center">
           <H6 paddingTop="$4">Salida</H6>
-          <DateChooser fechaInicio={getFechaManana()} />
+          <DateChooser
+            fechaInicio={getFechaManana()}
+            callbackActualizarFecha={actualizarFechaSalida}
+          />
         </View>
       </XStack>
       <DemoSlider />

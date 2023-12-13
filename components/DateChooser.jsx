@@ -6,9 +6,10 @@ import { getFormatedDate } from "react-native-modern-datepicker";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DateChooser({ fechaInicio, callbackActualizarDate }) {
+export function DateChooser({ fechaInicio, callbackActualizarFecha }) {
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
   const startDate = getFormatedDate(fechaInicio, "YYYY/MM/DD");
+  // const startDate = fechaInicio;
 
   const [selectedStartDate, setSelectedStartDate] = useState("");
   const [startedDate, setStartedDate] = useState(startDate);
@@ -49,7 +50,7 @@ export function DateChooser({ fechaInicio, callbackActualizarDate }) {
             onDateChanged={handleChangeStartDate}
             onSelectedChange={(date) => {
               setSelectedStartDate(date);
-              callbackActualizarDate(date);
+              callbackActualizarFecha(date);
             }}
             options={{
               textHeaderColor: "#8B66E5",

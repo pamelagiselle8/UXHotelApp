@@ -63,9 +63,9 @@ export function DemoCard({ lugar, navigation }) {
                   color="red"
                   fill="red"
                   fillOpacity={isLiked ? "$1" : "0"}
+                  onPress={onHeartPress}
                 />
               }
-              onPress={onHeartPress}
             >
               <Paragraph size="$8" left="$-3" fontFamily={"Rubik_600SemiBold"}>
                 {lugar.nombre}

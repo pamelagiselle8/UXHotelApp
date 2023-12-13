@@ -8,7 +8,7 @@ import {
   XStack,
   Paragraph,
 } from "tamagui";
-import { Dimensions } from "react-native";
+import { Dimensions, useState } from "react-native";
 import Servicios from "../components/Servicios";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
@@ -19,6 +19,15 @@ const windowWidth = Dimensions.get("window").width;
 export function DetalleLugar({ route, navigation }) {
   const { lugar } = route.params;
   let servicios = lugar.servicios;
+
+  // const [date, setDate] = useState("");
+  // setDate("2023-12-12");
+
+  function actualizarDate(newDate) {
+    // setDate(newDate);
+    console.log("PAPAYA");
+    console.log(newDate);
+  }
 
   function getFechaManana() {
     var fecha = new Date();
@@ -77,7 +86,10 @@ export function DetalleLugar({ route, navigation }) {
       <XStack alignSelf="center" paddingVertical="$2">
         <View alignSelf="left" alignItems="center" paddingRight="$6">
           <H6 paddingTop="$4">Entrada</H6>
-          <DateChooser fechaInicio={new Date()} />
+          <DateChooser
+            fechaInicio={new Date()}
+            callbackActualizarDate={actualizarDate}
+          />
         </View>
         <View alignSelf="right" alignItems="center">
           <H6 paddingTop="$4">Salida</H6>

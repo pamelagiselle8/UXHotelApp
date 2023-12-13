@@ -68,8 +68,6 @@ export function DemoCard({ lugar, navigation }) {
               onPress={onHeartPress}
             >
               <Paragraph size="$8" left="$-3" fontFamily={"Rubik_600SemiBold"}>
-                {/* VARIABLE */}
-                {/* Royal Palm Heritage */}
                 {lugar.nombre}
               </Paragraph>
             </ListItem>
@@ -89,8 +87,6 @@ export function DemoCard({ lugar, navigation }) {
                 left="$-12"
                 fontFamily={"Rubik_400Regular"}
               >
-                {/* VARIABLE */}
-                {/* Purwokerto, Jateng */}
                 {lugar.ubicacion}
               </Paragraph>
             </ListItem>
@@ -104,9 +100,7 @@ export function DemoCard({ lugar, navigation }) {
                 }}
                 left="$-2"
               />
-              {/* VARIABLE */}
               <H4 left="$-8" fontFamily={"Rubik_400Regular"}>
-                {/* 4.5 */}
                 {lugar.estrellas}
               </H4>
               <H6 fontFamily={"Rubik_300Light"}>({lugar.reviews} reviews)</H6>
@@ -116,10 +110,8 @@ export function DemoCard({ lugar, navigation }) {
           <YGroup.Item>
             <ListItem>
               <YStack alignItems="center" marginTop="$2" marginBottom="$-2">
-                {/* VARIABLE */}
                 <H2 fontFamily={"Rubik_600SemiBold"} size={"$9"}>
-                  {/* $245 */}
-                  {lugar.costo}
+                  ${lugar.costo}
                 </H2>
                 <Paragraph fontFamily={"Rubik_400Regular"} marginLeft={"$-5"}>
                   /noche
@@ -132,7 +124,6 @@ export function DemoCard({ lugar, navigation }) {
                 borderRadius="$10"
                 theme="active"
                 backgroundColor={"#8B66E5"}
-                // onPress={() => navigation.navigate("Detalles")}
                 onPress={() =>
                   navigation.navigate("Detalles", { lugar: lugar })
                 }

@@ -15,8 +15,10 @@ import DemoForm from "../components/DemoForm";
 import DemoSlider from "../components/DemoSlider";
 
 const windowWidth = Dimensions.get("window").width;
-let servicios = [1, 2, 3];
-export function DetalleLugar() {
+
+export function DetalleLugar({ route, navigation }) {
+  const { lugar } = route.params;
+  let servicios = lugar.servicios;
   return (
     <ScrollView width={windowWidth}>
       <View
@@ -40,14 +42,15 @@ export function DetalleLugar() {
           color="white"
           fontStyle="b"
         >
-          Royal Palm Heritage
+          {/* Royal Palm Heritage */}
+          {lugar.nombre}
         </H3>
       </View>
 
       <View paddingTop="$10">
         <Image
           source={{
-            uri: "https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg",
+            uri: lugar.img,
             width: 100,
             height: 250,
           }}
@@ -58,7 +61,8 @@ export function DetalleLugar() {
         />
 
         <H4 fontStyle="b" alignSelf="left" paddingLeft="$4" paddingTop="$4">
-          {servicios.length > 0 ? "Servicios" : ""}
+          {/* {servicios.length > 0 ? "Servicios" : ""} */}
+          Servicios
         </H4>
         <Servicios icons={servicios} />
 
@@ -66,9 +70,7 @@ export function DetalleLugar() {
           Ubicación
         </H4>
         <Paragraph alignSelf="left" paddingTop="$2" paddingHorizontal="$4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
+          {lugar.ubicacion}
         </Paragraph>
       </View>
 

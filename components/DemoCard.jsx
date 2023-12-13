@@ -23,6 +23,7 @@ import {
   Rubik_700Bold,
   Rubik_600SemiBold,
 } from "@expo-google-fonts/rubik";
+import DetalleLugar from "../screens/DetalleLugar";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -131,7 +132,10 @@ export function DemoCard({ lugar, navigation }) {
                 borderRadius="$10"
                 theme="active"
                 backgroundColor={"#8B66E5"}
-                onPress={() => navigation.navigate("Detalles")}
+                // onPress={() => navigation.navigate("Detalles")}
+                onPress={() =>
+                  navigation.navigate("Detalles", { lugar: lugar })
+                }
               >
                 <Paragraph
                   color="white"

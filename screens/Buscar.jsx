@@ -10,6 +10,7 @@ import {
 } from "tamagui";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions } from "react-native";
+import ComboBox from "../components/ComboBox";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -48,6 +49,9 @@ function Buscar() {
           >
             EL MEJOR LUGAR
           </H5>
+          <View alignItems="center">
+            <ComboBox />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

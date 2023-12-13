@@ -41,7 +41,7 @@ export async function getLugares() {
       estrellas: 4.5,
       reviews: 4368,
       costo: 245,
-      categoria: "Hotel",
+      categoria: "Villa",
       reservacion: {
         fechaEntrada: "",
         fechaSalida: "",
@@ -57,7 +57,7 @@ export async function getLugares() {
       estrellas: 4.5,
       reviews: 4368,
       costo: 245,
-      categoria: "Hotel",
+      categoria: "Apartamento",
       reservacion: {
         fechaEntrada: "",
         fechaSalida: "",

@@ -2,7 +2,6 @@ import { TamaguiProvider } from "tamagui";
 import config from "./tamagui.config";
 import { SafeAreaView, Dimensions } from "react-native";
 import { DemoTab } from "./components/DemoTab";
-import DetalleLugar from "./screens/DetalleLugar";
 // import Rubik from "rubik";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -23,6 +22,9 @@ import {
   Rubik_800ExtraBold_Italic,
   Rubik_900Black_Italic,
 } from "@expo-google-fonts/rubik";
+import BottomMenu from "./components/BottomMenu";
+import Inicio from "./screens/Inicio";
+import DetalleLugar from "./screens/DetalleLugar";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -46,18 +48,37 @@ const App = () => {
     Rubik_900Black_Italic,
   });
   return (
-    <NavigationContainer>
-      <TamaguiProvider config={config}>
-        <Stack.Navigator initialRouteName="Inicio">
+    <TamaguiProvider config={config}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName={BottomMenu}>
+          <Stack.Screen
+            name="BottomMenu"
+            component={BottomMenu}
+            options={{ header: () => null }}
+          />
+          <Stack.Screen
+            name="Inicio"
+            component={Inicio}
+            options={{ header: () => null }}
+          />
+          <Stack.Screen name="Detalles" component={DetalleLugar} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      {/* <Stack.Navigator initialRouteName="BottomMenu">
+          <Stack.Screen
+            name="BottomMenu"
+            component={BottomMenu}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Inicio"
             component={DemoTab}
             options={{ headerShown: false }}
           />
           <Stack.Screen name="Detalles" component={DetalleLugar} />
-        </Stack.Navigator>
-      </TamaguiProvider>
-    </NavigationContainer>
+        </Stack.Navigator> */}
+      {/* <BottomMenu /> */}
+    </TamaguiProvider>
 
     // <SafeAreaView alignSelf="center" alignItems="center">
     //   <TamaguiProvider config={config}>

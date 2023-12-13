@@ -45,7 +45,7 @@ export function DemoCard({ lugar, navigation }) {
         source={{
           width: 1,
           height: 180,
-          uri: imageUrl,
+          uri: lugar.img,
         }}
         width={windowWidth - 80}
         borderBottomRightRadius="$6"
@@ -68,7 +68,8 @@ export function DemoCard({ lugar, navigation }) {
             >
               <Paragraph size="$8" left="$-3" fontFamily={"Rubik_600SemiBold"}>
                 {/* VARIABLE */}
-                Royal Palm Heritage
+                {/* Royal Palm Heritage */}
+                {lugar.nombre}
               </Paragraph>
             </ListItem>
 
@@ -88,7 +89,8 @@ export function DemoCard({ lugar, navigation }) {
                 fontFamily={"Rubik_400Regular"}
               >
                 {/* VARIABLE */}
-                Purwokerto, Jateng
+                {/* Purwokerto, Jateng */}
+                {lugar.ubicacion}
               </Paragraph>
             </ListItem>
             <ListItem hoverTheme paddingTop="$1">
@@ -103,9 +105,10 @@ export function DemoCard({ lugar, navigation }) {
               />
               {/* VARIABLE */}
               <H4 left="$-8" fontFamily={"Rubik_400Regular"}>
-                4.5
+                {/* 4.5 */}
+                {lugar.estrellas}
               </H4>
-              <H6 fontFamily={"Rubik_300Light"}>(4368 reviews)</H6>
+              <H6 fontFamily={"Rubik_300Light"}>({lugar.reviews} reviews)</H6>
             </ListItem>
           </YGroup.Item>
 
@@ -114,7 +117,8 @@ export function DemoCard({ lugar, navigation }) {
               <YStack alignItems="center" marginTop="$2" marginBottom="$-2">
                 {/* VARIABLE */}
                 <H2 fontFamily={"Rubik_600SemiBold"} size={"$9"}>
-                  $245
+                  {/* $245 */}
+                  {lugar.costo}
                 </H2>
                 <Paragraph fontFamily={"Rubik_400Regular"} marginLeft={"$-5"}>
                   /noche

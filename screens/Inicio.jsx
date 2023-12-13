@@ -1,6 +1,6 @@
-import { Heading, H2, H5, ScrollView, View, Image, Separator } from "tamagui";
+import { H2, H5, ScrollView, View, Image, Separator } from "tamagui";
 import { DemoCard } from "../components/DemoCard";
-import { Dimensions, Text } from "react-native";
+import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import {
   useFonts,
@@ -17,23 +17,12 @@ export function Inicio({ navigation }) {
     Rubik_700Bold,
   });
 
-  // useEffect(() => {
-  //   const fetchDatos = async () => {
-  //     const lugares = await getLugares();
-  //   };
-  //   fetchDatos();
-  // }, []);
-
   const [lugares, setLugares] = useState([]);
 
   useEffect(() => {
     const fetchDatos = async () => {
-      // try {
       const lugaresData = await getLugares();
       setLugares(lugaresData);
-      // } catch (error) {
-      //   console.error("Error al obtener lugares:", error);
-      // }
     };
     fetchDatos();
   }, []);
@@ -73,20 +62,9 @@ export function Inicio({ navigation }) {
       </View>
 
       <View alignSelf="center" paddingTop="$15">
-        {lugares.map((lugar) => console.log(lugar))}
-        {/* <DemoCard
-          lugar={lugare}
-          navigation={navigation}
-          imageUrl="https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg"
-        /> */}
-        {/* <DemoCard
-          navigation={navigation}
-          imageUrl="https://forbes.es/wp-content/uploads/2023/05/Airbnb-Negocio_01.jpg?format=webp&width=831&height=467"
-        />
-        <DemoCard
-          navigation={navigation}
-          imageUrl="https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16%3A9/w_2560%252Cc_limit/airbnb%252520luxe.jpg?format=webp&width=831&height=467"
-        /> */}
+        {lugares.map((lugar) => (
+          <DemoCard lugar={lugar} navigation={navigation} />
+        ))}
         <Separator paddingTop="$4" />
       </View>
     </ScrollView>

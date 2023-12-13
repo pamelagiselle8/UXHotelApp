@@ -22,7 +22,7 @@ export async function getLugares() {
       img: "https://www.arquitecturaydiseno.es/medio/2023/04/09/habitacion-en-airbnb-matakana-auckland-nueva-zelanda-2_619c6180_230409202116_2000x1335.jpg",
       nombre: "Royal Palm Heritage",
       ubicacion: "Purwokerto, Jateng",
-      estrellas: 4.5,
+      estrellas: 4.3,
       reviews: 4368,
       costo: 245,
       categoria: "Hotel",

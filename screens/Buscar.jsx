@@ -70,7 +70,7 @@ function Buscar({ navigation }) {
             EL MEJOR LUGAR
           </H5>
           <View alignSelf="center" position="absolute" paddingTop="$15">
-            <ComboBox />
+            <ComboBox callbackCategoria={setCategoria} />
           </View>
           <View
             alignSelf="center"
@@ -79,7 +79,7 @@ function Buscar({ navigation }) {
             marginTop="$20"
           >
             {lugares
-              .filter((lugar) => lugar.categoria === "Hotel")
+              .filter((lugar) => lugar.categoria === categoria)
               .map((lugar, index) => (
                 <DemoCard key={index} lugar={lugar} navigation={navigation} />
               ))}

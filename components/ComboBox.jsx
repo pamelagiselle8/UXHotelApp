@@ -14,7 +14,7 @@ import {
   getFontSize,
 } from "tamagui";
 
-export function ComboBox({ categoria, callbackCategoria }) {
+export function ComboBox({ callbackCategoria }) {
   const [lugares, setLugares] = useState([]);
   const categorias = [...new Set(lugares.map((lugar) => lugar.categoria))];
   const items = categorias.map((categoria, index) => ({
@@ -22,7 +22,7 @@ export function ComboBox({ categoria, callbackCategoria }) {
     id: index,
   }));
 
-  console.log(items);
+  // console.log(items);
   useEffect(() => {
     const fetchDatos = async () => {
       const lugaresData = await getLugares();
@@ -32,11 +32,15 @@ export function ComboBox({ categoria, callbackCategoria }) {
   }, []);
 
   const [val, setVal] = useState("");
+
   return (
     <Select
       id="categoria"
       value={val}
-      onValueChange={setVal}
+      onValueChange={(value) => {
+        setVal;
+        callbackCategoria(value);
+      }}
       disablePreventBodyScroll
     >
       <Select.Trigger width={220} iconAfter={<ChevronDown color="#6155CC" />}>
@@ -88,11 +92,7 @@ export function ComboBox({ categoria, callbackCategoria }) {
               () =>
                 items.map((item, i) => {
                   return (
-                    <Select.Item
-                      index={i}
-                      key={item.name}
-                      value={item.name.toLowerCase()}
-                    >
+                    <Select.Item index={i} key={item.name} value={item.name}>
                       <Select.ItemText>{item.name}</Select.ItemText>
                       <Select.ItemIndicator marginLeft="auto">
                         <Check size={16} color="#6155CC" />
@@ -121,17 +121,3 @@ export function ComboBox({ categoria, callbackCategoria }) {
 }
 
 export default ComboBox;
-
-// const items = [
-//   { name: "Hotel" },
-//   { name: "Hostal" },
-//   { name: "Apartamento" },
-//   { name: "Villa" },
-// ];
-// const lugares = [
-//   { name: "Lugar1", categoria: "Hotel" },
-//   { name: "Lugar2", categoria: "Hostal" },
-//   { name: "Lugar3", categoria: "Apartamento" },
-//   { name: "Lugar4", categoria: "Villa" },
-//   // Otros lugares...
-// ];

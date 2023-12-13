@@ -65,7 +65,7 @@ export function Inicio({ navigation }) {
 
         <View alignSelf="center" paddingTop="$15">
           {lugares.map((lugar, index) => (
-            <DemoCard lugar={lugar} navigation={navigation} />
+            <DemoCard key={index} lugar={lugar} navigation={navigation} />
           ))}
           <Separator paddingTop="$4" />
         </View>

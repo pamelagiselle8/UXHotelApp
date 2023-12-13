@@ -21,12 +21,7 @@ export function DetalleLugar({ route, navigation }) {
   let servicios = lugar.servicios;
   return (
     <ScrollView width={windowWidth}>
-      <View
-        width={windowWidth}
-        alignSelf="center"
-        position="absolute"
-        // paddingTop="$3"
-      >
+      <View width={windowWidth} position="absolute">
         <Image
           source={{
             uri: "https://cdn.discordapp.com/attachments/1181346648002134116/1182762523821351133/Sin_titulo-2.png?ex=6585e070&is=65736b70&hm=d4927caf1631f037bf00be7c37517aa09f5a70967ed3502f8be5e40e696ed7e1&",
@@ -42,7 +37,6 @@ export function DetalleLugar({ route, navigation }) {
           color="white"
           fontStyle="b"
         >
-          {/* Royal Palm Heritage */}
           {lugar.nombre}
         </H3>
       </View>
@@ -77,11 +71,11 @@ export function DetalleLugar({ route, navigation }) {
       <XStack alignSelf="center" paddingVertical="$2">
         <View alignSelf="left" alignItems="center" paddingRight="$6">
           <H6 paddingTop="$4">Entrada</H6>
-          <DateChooser />
+          <DateChooser fechaInicio={new Date()} />
         </View>
         <View alignSelf="right" alignItems="center">
           <H6 paddingTop="$4">Salida</H6>
-          <DateChooser />
+          <DateChooser fechaInicio={new Date()} />
         </View>
       </XStack>
       <DemoSlider />

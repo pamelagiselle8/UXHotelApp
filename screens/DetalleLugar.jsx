@@ -8,6 +8,15 @@ import {
   XStack,
   Paragraph,
 } from "tamagui";
+import {
+  Font,
+  useFonts,
+  Rubik_300Light,
+  Rubik_400Regular,
+  Rubik_500Medium,
+  Rubik_700Bold,
+  Rubik_600SemiBold,
+} from "@expo-google-fonts/rubik";
 import { Dimensions } from "react-native";
 import { useState } from "react";
 import Servicios from "../components/Servicios";
@@ -18,6 +27,24 @@ import DemoSlider from "../components/DemoSlider";
 const windowWidth = Dimensions.get("window").width;
 
 export function DetalleLugar({ route, navigation }) {
+  const fonts = {
+    Rubik_300Light,
+    Rubik_400Regular,
+    Rubik_500Medium,
+    Rubik_700Bold,
+    Rubik_600SemiBold,
+  };
+
+  const loadFontsAsync = async () => {
+    try {
+      // Carga las fuentes de manera asíncrona
+      await Font.loadAsync(fonts);
+    } catch (error) {
+      // console.error("Error al cargar las fuentes:", error);
+    }
+  };
+  loadFontsAsync();
+
   const { lugar } = route.params;
   let servicios = lugar.servicios;
 
@@ -72,30 +99,50 @@ export function DetalleLugar({ route, navigation }) {
           alignSelf="center"
         />
 
-        <H4 fontStyle="b" alignSelf="left" paddingLeft="$4" paddingTop="$4">
+        <H4
+          size="$8"
+          fontFamily={"Rubik_600SemiBold"}
+          paddingLeft="$5"
+          paddingTop="$5"
+        >
           {/* {servicios.length > 0 ? "Servicios" : ""} */}
           Servicios
         </H4>
         <Servicios icons={servicios} />
 
-        <H4 fontStyle="b" alignSelf="left" paddingTop="$4" paddingLeft="$4">
+        <H4
+          size="$8"
+          fontFamily={"Rubik_600SemiBold"}
+          paddingLeft="$5"
+          paddingTop="$5"
+        >
           Ubicación
         </H4>
-        <Paragraph alignSelf="left" paddingTop="$2" paddingHorizontal="$4">
+        {/* <Paragraph alignSelf="left" paddingTop="$2" paddingHorizontal="$4"> */}
+        <Paragraph
+          size="$4"
+          fontFamily={"Rubik_400Regular"}
+          paddingLeft="$5"
+          paddingTop="$2"
+        >
           {lugar.ubicacion}
         </Paragraph>
       </View>
 
       <XStack alignSelf="center" paddingVertical="$2">
         <View alignSelf="left" alignItems="center" paddingRight="$6">
-          <H6 paddingTop="$4">Entrada</H6>
+          <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
+            ENTRADA
+          </H6>
           <DateChooser
             fechaInicio={new Date()}
             callbackActualizarFecha={actualizarFechaEntrada}
           />
         </View>
         <View alignSelf="right" alignItems="center">
-          <H6 paddingTop="$4">Salida</H6>
+          <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
+            SALIDA
+          </H6>
           <DateChooser
             fechaInicio={getFechaManana()}
             callbackActualizarFecha={actualizarFechaSalida}

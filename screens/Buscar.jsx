@@ -8,6 +8,15 @@ import {
   XStack,
   Paragraph,
 } from "tamagui";
+import {
+  Font,
+  useFonts,
+  Rubik_300Light,
+  Rubik_400Regular,
+  Rubik_500Medium,
+  Rubik_700Bold,
+  Rubik_600SemiBold,
+} from "@expo-google-fonts/rubik";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions } from "react-native";
 import { useState, useEffect } from "react";
@@ -20,6 +29,24 @@ const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 function Buscar({ navigation }) {
+  const fonts = {
+    Rubik_300Light,
+    Rubik_400Regular,
+    Rubik_500Medium,
+    Rubik_700Bold,
+    Rubik_600SemiBold,
+  };
+
+  const loadFontsAsync = async () => {
+    try {
+      // Carga las fuentes de manera asíncrona
+      await Font.loadAsync(fonts);
+    } catch (error) {
+      // console.error("Error al cargar las fuentes:", error);
+    }
+  };
+  loadFontsAsync();
+
   const [lugares, setLugares] = useState([]);
 
   useEffect(() => {

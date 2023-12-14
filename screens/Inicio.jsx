@@ -4,19 +4,36 @@ import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
+  Font,
   useFonts,
   Rubik_300Light,
+  Rubik_400Regular,
+  Rubik_500Medium,
   Rubik_700Bold,
+  Rubik_600SemiBold,
 } from "@expo-google-fonts/rubik";
 import { getLugares } from "../API/LugaresAPI";
 
 const windowWidth = Dimensions.get("window").width;
 
 export function Inicio({ navigation }) {
-  let [fontsLoaded] = useFonts({
+  const fonts = {
     Rubik_300Light,
+    Rubik_400Regular,
+    Rubik_500Medium,
     Rubik_700Bold,
-  });
+    Rubik_600SemiBold,
+  };
+
+  const loadFontsAsync = async () => {
+    try {
+      // Carga las fuentes de manera asíncrona
+      await Font.loadAsync(fonts);
+    } catch (error) {
+      // console.error("Error al cargar las fuentes:", error);
+    }
+  };
+  loadFontsAsync();
 
   const [lugares, setLugares] = useState([]);
 

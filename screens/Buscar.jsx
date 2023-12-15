@@ -10,7 +10,7 @@ import {
 } from "tamagui";
 import {
   Font,
-  useFonts,
+  // useFonts,
   Rubik_300Light,
   Rubik_400Regular,
   Rubik_500Medium,
@@ -20,10 +20,26 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions } from "react-native";
 import { useState, useEffect } from "react";
-import { getLugares } from "../API/LugaresAPI";
 import { DemoCard } from "../components/DemoCard";
 import { Separator } from "tamagui";
+import axios from "axios";
 import ComboBox from "../components/ComboBox";
+import { useFonts } from "expo-font";
+
+function cargarFonts() {
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Rubik: require("@expo-google-fonts/rubik"),
+    Rubik_300Light: require("@expo-google-fonts/rubik"),
+    Rubik_600SemiBold: require("@expo-google-fonts/rubik"),
+    Rubik_400Regular: require("@expo-google-fonts/rubik"),
+    Rubik_500Medium: require("@expo-google-fonts/rubik"),
+    Rubik_700Bold: require("@expo-google-fonts/rubik"),
+  });
+
+  return loaded;
+}
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -40,9 +56,10 @@ function Buscar({ navigation }) {
   const loadFontsAsync = async () => {
     try {
       // Carga las fuentes de manera asíncrona
-      await Font.loadAsync(fonts);
+      // await Font.loadFontsAsync(fonts);
+      cargarFonts();
     } catch (error) {
-      // console.error("Error al cargar las fuentes:", error);
+      console.error("Error al cargar las fuentes:", error);
     }
   };
   loadFontsAsync();
@@ -51,8 +68,17 @@ function Buscar({ navigation }) {
 
   useEffect(() => {
     const fetchDatos = async () => {
-      const lugaresData = await getLugares();
-      setLugares(lugaresData);
+      try {
+        const response = await axios.get(
+          "https://w4sbwwxb-3000.use.devtunnels.ms/getAlojamientos",
+          {}
+        );
+        const lugaresData = response.data;
+        // console.log(lugaresData);
+        setLugares(lugaresData);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchDatos();
   }, []);

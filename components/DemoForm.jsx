@@ -4,7 +4,7 @@ import { Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DemoForm() {
+export function DemoForm({ fechaEntrada, fechaSalida }) {
   const [status, setStatus] = useState("off");
 
   function getTextoBoton(status) {
@@ -23,7 +23,10 @@ export function DemoForm() {
 
   useEffect(() => {
     if (status === "submitting") {
-      const timer = setTimeout(() => setStatus("submitted"), 2000);
+      const timer = setTimeout(() => {
+        // Guardar reservacion aqui
+        setStatus("submitted");
+      }, 2000);
       return () => {
         clearTimeout(timer);
       };

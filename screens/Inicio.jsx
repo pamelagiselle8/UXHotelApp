@@ -4,39 +4,13 @@ import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
-
-import {
-  Font,
-  useFonts,
-  Rubik_300Light,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-  Rubik_600SemiBold,
-} from "@expo-google-fonts/rubik";
-import { getLugares } from "../API/LugaresAPI";
+// import { useFonts } from "expo-font";
+import { useFonts } from "@expo-google-fonts/rubik";
+import { Rubik_600SemiBold } from "@expo-google-fonts/rubik";
 
 const windowWidth = Dimensions.get("window").width;
 
 export function Inicio({ navigation }) {
-  const fonts = {
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Rubik_600SemiBold,
-  };
-
-  const loadFontsAsync = async () => {
-    try {
-      // Carga las fuentes de manera asíncrona
-      await Font.loadAsync(fonts);
-    } catch (error) {
-      // console.error("Error al cargar las fuentes:", error);
-    }
-  };
-  loadFontsAsync();
-
   const [lugares, setLugares] = useState([]);
 
   useEffect(() => {
@@ -56,6 +30,17 @@ export function Inicio({ navigation }) {
     fetchDatos();
   }, []);
 
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Rubik: require("@expo-google-fonts/rubik/Rubik_800ExtraBold_Italic.ttf"),
+  });
+
+  if (!loaded) {
+    console.log("No se cargaron las fonts");
+    return null;
+  }
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -74,7 +59,7 @@ export function Inicio({ navigation }) {
             paddingTop="$6"
             position="absolute"
             color="white"
-            fontFamily={"Rubik_700Bold"}
+            fontFamily={"Rubik"}
           >
             Explora
           </H2>

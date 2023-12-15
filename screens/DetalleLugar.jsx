@@ -150,7 +150,7 @@ export function DetalleLugar({ route, navigation }) {
         </View>
       </XStack>
       <DemoSlider />
-      <DemoForm />
+      <DemoForm fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} />
     </ScrollView>
   );
 }

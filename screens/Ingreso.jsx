@@ -60,9 +60,9 @@ export function Registro({ navigation }) {
       position="absolute"
       color="white"
       fontFamily={"Rubik_700Bold"}
-      fontSize={55}
+      fontSize={45}
     >
-      Registro
+      Iniciar Sesion
     </H2>
     <H5
       alignSelf="center"
@@ -73,7 +73,7 @@ export function Registro({ navigation }) {
       fontFamily={"Rubik_300Light"}
       fontSize={25}
     >
-      Bienvenido!!
+      Bienvenido De Vuelta!!
     </H5>
     
 
@@ -81,30 +81,35 @@ export function Registro({ navigation }) {
 
     <View   position="absolute" paddingTop="90%"  alignSelf="center" width={"$20"} >
 
-    <Label htmlFor="name" fontSize={17}>Nombre</Label>
-    <Input id="name" defaultValue=""/>
-    <Label htmlFor="name" fontSize={17}>Apellido</Label>
-    <Input id="name" defaultValue="" />
     <Label htmlFor="name" fontSize={17}>Correo</Label>
     <Input id="name" defaultValue="" />
     <Label htmlFor="name" fontSize={17} >Contraseña</Label>
     <Input id="name" defaultValue="" />
     <Label>
-    <Label htmlFor="Telefono" fontSize={17} >Contraseña</Label>
-    <Input id="name" defaultValue="" />
-    <Label></Label>
-          Aceptas Nuestros Terminos Y Condiciones?
+          No Cerrar Sesion?
         </Label>
         <Switch size="$4" borderColor={'rgb(113,93,213)'} >
           <Switch.Thumb animation="bouncy" borderColor={'rgb(113,93,213)'} />
         </Switch>
     </View>
 
-      <View position="absolute" paddingTop="250%"  alignSelf="center">
-        <Button backgroundColor={'rgb(113,93,213)'} width={"$20"} height={"$6"} color="white" fontFamily={"Rubik_700Bold"}  borderRadius={25} >
-        Registrarse
+      <View position="absolute" paddingTop="190%"  alignSelf="center">
+      <Button backgroundColor={'rgb(113,93,213)'} width={"$20"} height={"$6"} color="white" fontFamily={"Rubik_700Bold"}  borderRadius={25} paddingBottom="15">
+        Iniciar Sesison
         </Button>
       </View>
+      <View position="absolute" paddingTop="220%"  alignSelf="center">
+          <H5
+          alignSelf="center"
+          color="black"
+          fontFamily={"Rubik_700Bold"}
+          fontSize={15}>
+          No Tienes Una Cuenta?
+        </H5>
+            <Button backgroundColor={'rgb(113,93,213)'} width={"$20"} height={"$6"} color="white" fontFamily={"Rubik_700Bold"}  borderRadius={25} >
+            Registrate
+            </Button>
+        </View>
 
     </SafeAreaView>
     

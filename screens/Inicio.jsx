@@ -1,3 +1,4 @@
+
 import { Heading, H2, H5, ScrollView, View, Image, Separator } from "tamagui";
 import { DemoCard } from "../components/DemoCard";
 import { Dimensions, Text } from "react-native";
@@ -18,27 +19,9 @@ export function Inicio({ navigation }) {
     Rubik_300Light,
     Rubik_700Bold,
   });
-  // useEffect(() => {
-  //   const fetchData = () => {
-  //     try {
-  //       const data = getHospedajes();
-  //       // console.log(data);
-  //     } catch (error) {
-  //       console.error("Error al cargar datos:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
   return (
-    <ScrollView paddingTop="$4">
-    <Checkbox size="$4" borderColor={"black"}>
-    <Checkbox.Indicator>
-      <Check />
-    </Checkbox.Indicator>
-  </Checkbox>
-      {/* <View width={windowWidth} alignSelf="center" position="absolute">
+    <ScrollView>
+       <View width={windowWidth} alignSelf="center" position="absolute">
         <Image
           source={{
             uri: "https://cdn.discordapp.com/attachments/1181346648002134116/1182762523821351133/Sin_titulo-2.png?ex=6585e070&is=65736b70&hm=d4927caf1631f037bf00be7c37517aa09f5a70967ed3502f8be5e40e696ed7e1&",
@@ -84,7 +67,8 @@ export function Inicio({ navigation }) {
           imageUrl="https://media.cntraveler.com/photos/5d112d50c4d7bd806dbc00a4/16%3A9/w_2560%252Cc_limit/airbnb%252520luxe.jpg?format=webp&width=831&height=467"
         />
         <Separator paddingTop="$4" />
-      </View> */}
+      </View> 
+
     </ScrollView>
   );
 }

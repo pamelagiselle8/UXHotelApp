@@ -6,7 +6,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
 
 import { useFonts } from "expo-font";
-// import * as Font from 'expo-font';
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -60,7 +59,7 @@ export function Inicio({ navigation }) {
             paddingTop="$6"
             position="absolute"
             color="white"
-            fontFamily={"SemiBold"}
+            fontFamily={"ExtraBold"}
           >
             Explora
           </H2>
@@ -70,7 +69,7 @@ export function Inicio({ navigation }) {
             paddingBottom="$5"
             position="absolute"
             color="mistyrose"
-            // fontFamily={"Light"}
+            fontFamily={"Light"}
             fontSize={18}
           >
             DESTACADOS

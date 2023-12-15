@@ -2,6 +2,9 @@ import { TamaguiProvider } from "tamagui";
 import config from "./tamagui.config";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { LogBox } from "react-native";
+// Ignore all log notifications:
+LogBox.ignoreAllLogs();
 
 import BottomMenu from "./components/BottomMenu";
 import Inicio from "./screens/Inicio";

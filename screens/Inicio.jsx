@@ -3,6 +3,7 @@ import { DemoCard } from "../components/DemoCard";
 import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import axios from "axios";
 
 import {
   Font,
@@ -40,8 +41,17 @@ export function Inicio({ navigation }) {
 
   useEffect(() => {
     const fetchDatos = async () => {
-      const lugaresData = await getLugares();
-      setLugares(lugaresData);
+      try {
+        const response = await axios.get(
+          "https://w4sbwwxb-3000.use.devtunnels.ms/getAlojamientos",
+          {}
+        );
+        const lugaresData = response.data;
+        // console.log(lugaresData);
+        setLugares(lugaresData);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchDatos();
   }, []);

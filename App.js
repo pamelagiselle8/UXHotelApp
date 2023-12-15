@@ -9,7 +9,19 @@ import DetalleLugar from "./screens/DetalleLugar";
 
 const Stack = createStackNavigator();
 
+import { useFonts } from "expo-font";
+
+function fonts() {
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+  });
+
+  return loaded;
+}
+
 const App = () => {
+  console.log(fonts());
   return (
     <TamaguiProvider config={config}>
       <NavigationContainer>

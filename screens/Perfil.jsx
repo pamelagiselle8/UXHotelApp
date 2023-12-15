@@ -1,4 +1,3 @@
-
 import { Heading, H2, H5, ScrollView, View, Image, Separator } from "tamagui";
 import { UserCog, ChevronRight, Moon, Star, Sun } from '@tamagui/lucide-icons'
 import { DemoCard } from "../components/DemoCard";

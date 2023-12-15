@@ -4,7 +4,6 @@ import {
   Card,
   H2,
   H4,
-  H6,
   Paragraph,
   Button,
   Image,
@@ -12,47 +11,30 @@ import {
   YGroup,
   ListItem,
   YStack,
-  View,
-  XStack,
 } from "tamagui";
-import { Heart, Bookmark } from "@tamagui/lucide-icons";
+import { Heart } from "@tamagui/lucide-icons";
 import { useState } from "react";
-import {
-  Font,
-  useFonts,
-  Rubik_300Light,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-  Rubik_600SemiBold,
-} from "@expo-google-fonts/rubik";
-// import { useFonts } from 'expo-font';
+import { useFonts } from "@expo-google-fonts/rubik";
 
 const windowWidth = Dimensions.get("window").width;
 
 export function DemoCard({ lugar, navigation }) {
+  // Cargar Fonts
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Regular: require("@expo-google-fonts/rubik/Rubik_400Regular.ttf"),
+    Light: require("@expo-google-fonts/rubik/Rubik_300Light.ttf"),
+    Medium: require("@expo-google-fonts/rubik/Rubik_500Medium.ttf"),
+    Bold: require("@expo-google-fonts/rubik/Rubik_700Bold.ttf"),
+    SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
+    ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
+  });
+
   const [isLiked, setIsLiked] = useState(false);
   const onHeartPress = () => {
     setIsLiked(!isLiked);
   };
-
-  const fonts = {
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Rubik_600SemiBold,
-  };
-
-  const loadFontsAsync = async () => {
-    try {
-      // Carga las fuentes de manera asíncrona
-      await Font.loadAsync(fonts);
-    } catch (error) {
-      // console.error("Error al cargar las fuentes:", error);
-    }
-  };
-  loadFontsAsync();
 
   return (
     <Card elevate borderRadius="$6" marginBottom="$3">
@@ -82,12 +64,12 @@ export function DemoCard({ lugar, navigation }) {
                 />
               }
               title={
-                <Paragraph size="$8" fontFamily={"Rubik_600SemiBold"}>
+                <Paragraph size="$8" fontFamily={"SemiBold"}>
                   {lugar.nombre}
                 </Paragraph>
               }
               subTitle={
-                <Paragraph size="$4" fontFamily={"Rubik_400Regular"}>
+                <Paragraph size="$4" fontFamily={"Regular"}>
                   {lugar.categoria}
                 </Paragraph>
               }
@@ -98,7 +80,7 @@ export function DemoCard({ lugar, navigation }) {
               hoverTheme
               paddingTop="$1"
               title={
-                <Paragraph size={"$5"} fontFamily={"Rubik_400Regular"}>
+                <Paragraph size={"$5"} fontFamily={"Regular"}>
                   {lugar.ubicacion}
                 </Paragraph>
               }
@@ -117,13 +99,9 @@ export function DemoCard({ lugar, navigation }) {
             <ListItem
               hoverTheme
               marginTop="$-4"
-              title={
-                <H4 fontFamily={"Rubik_400Regular"}>
-                  {lugar.estrellas + "    "}
-                </H4>
-              }
+              title={<H4 fontFamily={"Regular"}>{lugar.estrellas + "    "}</H4>}
               subTitle={
-                <Paragraph size="$4" fontFamily={"Rubik_300Light"}>
+                <Paragraph size="$4" fontFamily={"Light"}>
                   {lugar.reviews + " reviews"}
                 </Paragraph>
               }
@@ -143,10 +121,10 @@ export function DemoCard({ lugar, navigation }) {
           <YGroup.Item>
             <ListItem>
               <YStack alignItems="center" marginTop="$2" marginBottom="$-2">
-                <H2 fontFamily={"Rubik_600SemiBold"} size={"$9"}>
+                <H2 fontFamily={"SemiBold"} size={"$9"}>
                   ${lugar.costo}
                 </H2>
-                <Paragraph fontFamily={"Rubik_400Regular"} marginLeft={"$-5"}>
+                <Paragraph fontFamily={"Regular"} marginLeft={"$-5"}>
                   /noche
                 </Paragraph>
               </YStack>
@@ -161,11 +139,7 @@ export function DemoCard({ lugar, navigation }) {
                   navigation.navigate("Detalles", { lugar: lugar })
                 }
               >
-                <Paragraph
-                  color="white"
-                  size={"$5"}
-                  fontFamily={"Rubik_600SemiBold"}
-                >
+                <Paragraph color="white" size={"$5"} fontFamily={"SemiBold"}>
                   Reservar
                 </Paragraph>
               </Button>

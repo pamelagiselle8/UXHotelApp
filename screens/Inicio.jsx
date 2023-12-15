@@ -4,13 +4,25 @@ import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import axios from "axios";
-// import { useFonts } from "expo-font";
-import { useFonts } from "@expo-google-fonts/rubik";
-import { Rubik_600SemiBold } from "@expo-google-fonts/rubik";
+
+import { useFonts } from "expo-font";
+// import * as Font from 'expo-font';
 
 const windowWidth = Dimensions.get("window").width;
 
 export function Inicio({ navigation }) {
+  // Cargar Fonts
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Regular: require("@expo-google-fonts/rubik/Rubik_400Regular.ttf"),
+    Light: require("@expo-google-fonts/rubik/Rubik_300Light.ttf"),
+    Medium: require("@expo-google-fonts/rubik/Rubik_500Medium.ttf"),
+    Bold: require("@expo-google-fonts/rubik/Rubik_700Bold.ttf"),
+    SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
+    ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
+  });
+
   const [lugares, setLugares] = useState([]);
 
   useEffect(() => {
@@ -30,17 +42,6 @@ export function Inicio({ navigation }) {
     fetchDatos();
   }, []);
 
-  const [loaded] = useFonts({
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
-    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
-    Rubik: require("@expo-google-fonts/rubik/Rubik_800ExtraBold_Italic.ttf"),
-  });
-
-  if (!loaded) {
-    console.log("No se cargaron las fonts");
-    return null;
-  }
-
   return (
     <SafeAreaView>
       <ScrollView>
@@ -59,7 +60,7 @@ export function Inicio({ navigation }) {
             paddingTop="$6"
             position="absolute"
             color="white"
-            fontFamily={"Rubik"}
+            fontFamily={"SemiBold"}
           >
             Explora
           </H2>
@@ -69,7 +70,7 @@ export function Inicio({ navigation }) {
             paddingBottom="$5"
             position="absolute"
             color="mistyrose"
-            fontFamily={"Rubik_300Light"}
+            // fontFamily={"Light"}
             fontSize={18}
           >
             DESTACADOS

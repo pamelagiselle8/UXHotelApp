@@ -3,6 +3,7 @@ import { DemoCard } from "../components/DemoCard";
 import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+
 import {
   Font,
   useFonts,

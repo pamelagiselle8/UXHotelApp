@@ -88,9 +88,9 @@ export function Ingreso({ navigation }) {
           position="absolute"
           color="white"
           fontFamily={"Rubik_700Bold"}
-          fontSize={55}
+          fontSize={45}
         >
-          Inicio Sesion
+          Inicio de Sesión
         </H2>
         <H5
           alignSelf="center"
@@ -101,11 +101,11 @@ export function Ingreso({ navigation }) {
           fontFamily={"Rubik_300Light"}
           fontSize={25}
         >
-          Bienvenido De Vuelta!!
+          ¡Bienvenido de vuelta!
         </H5>
       </View>
 
-      <View position="absolute" paddingTop="80%" alignSelf="center">
+      <View position="absolute" paddingTop="90%" alignSelf="center">
         <Label htmlFor="correo" fontSize={17}>
           Correo
         </Label>
@@ -124,14 +124,18 @@ export function Ingreso({ navigation }) {
           onChangeText={handleContrasenaChange}
           width={"$20"}
         />
-        <Label>No Cerrar Sesión?</Label>
+        <Label>¿Mantener sesión iniciada?</Label>
         <Switch
           size="$4"
           borderColor={"rgb(113,93,213)"}
           onValueChange={handleNoCerrarSesionChange}
           value={noCerrarSesion}
         >
-          <Switch.Thumb animation="bouncy" borderColor={"rgb(113,93,213)"} />
+          <Switch.Thumb
+            backgroundColor={"rgb(113,93,213)"}
+            animation="bouncy"
+            borderColor={"rgb(113,93,213)"}
+          />
         </Switch>
       </View>
 
@@ -143,7 +147,6 @@ export function Ingreso({ navigation }) {
           color="white"
           fontFamily={"Rubik_700Bold"}
           borderRadius={25}
-          // paddingBottom="15"
           onPress={handleIniciarSesion}
         >
           Iniciar Sesión
@@ -156,7 +159,7 @@ export function Ingreso({ navigation }) {
           fontFamily={"Rubik_700Bold"}
           fontSize={15}
         >
-          No Tienes Una Cuenta?
+          ¿No Tienes Una Cuenta?
         </H5>
         <Button
           backgroundColor={"rgb(113,93,213)"}

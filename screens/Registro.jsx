@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, View, Alert, Dimensions, Image } from "react-native";
+import { View, Alert, Dimensions, Image } from "react-native";
 import { Input, Label, Switch, Button, H2, H5 } from "tamagui";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {
   useFonts,
   Rubik_300Light,
@@ -82,8 +83,6 @@ export function Registro({ navigation }) {
         <Image
           source={{
             uri: "https://img.freepik.com/fotos-premium/fondo-gris-claro-liso-liso_8087-1190.jpg",
-            width: 400, //{ windowWidth },
-            height: 400, //{ windowheight },
           }}
           width={windowWidth}
           height={windowheight}
@@ -121,13 +120,7 @@ export function Registro({ navigation }) {
         </H5>
       </View>
 
-      <View
-        position="absolute"
-        paddingTop="74%"
-        alignSelf="center"
-        // width={"$20"}
-        // width="$20"
-      >
+      <View position="absolute" paddingTop="85%" alignSelf="center">
         <Label htmlFor="name" fontSize={17}>
           Nombre
         </Label>

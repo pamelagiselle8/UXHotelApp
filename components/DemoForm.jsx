@@ -5,8 +5,8 @@ import axios from "axios";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DemoForm({ route, fechaEntrada, fechaSalida, idUsuario }) {
-  const { alojamiento } = route.params;
+export function DemoForm({ lugar, fechaEntrada, fechaSalida, idUsuario }) {
+  const alojamiento = lugar;
 
   const [status, setStatus] = useState("off");
 
@@ -32,8 +32,6 @@ export function DemoForm({ route, fechaEntrada, fechaSalida, idUsuario }) {
         fechaSalida: fechaSalida,
         idUsuario: idUsuario,
       };
-      console.log("alojamiento " + { alojamiento });
-      console.log("reservacion " + { reservacion });
       const fetchDatos = async () => {
         try {
           const response = await axios.put(
@@ -43,15 +41,12 @@ export function DemoForm({ route, fechaEntrada, fechaSalida, idUsuario }) {
               "context-type": "application/x-www-form-urlencoded",
             }
           );
-          console.log(response);
-          console.log("PAPAYA");
         } catch (error) {
           console.log("Error al enviar solicitud get: ", error);
         }
         console.log("Respuesta del servidor: ", response.data);
       };
       fetchDatos();
-      console.log("sali");
       const timer = setTimeout(() => {
         setStatus("submitted");
       }, 2000);

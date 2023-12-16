@@ -32,7 +32,6 @@ export function Inicio({ navigation }) {
           {}
         );
         const lugaresData = response.data;
-        // console.log(lugaresData);
         setLugares(lugaresData);
       } catch (error) {
         console.log(error);

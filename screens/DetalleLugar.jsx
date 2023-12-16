@@ -167,8 +167,12 @@ export function DetalleLugar({ route }) {
         ${total}
       </H4>
       <Separator paddingBottom="$5" />
-      {/* fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} */}
-      <DemoForm route={route} fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} idUsuario={1} />
+      <DemoForm
+        lugar={lugar}
+        fechaEntrada={fechaEntrada}
+        fechaSalida={fechaSalida}
+        idUsuario={1}
+      />
     </ScrollView>
   );
 }

@@ -9,6 +9,7 @@ import {
   Rubik_700Bold,
 } from "@expo-google-fonts/rubik";
 import { hola } from "../API/Usuarios_Api";
+import { ComprobarUsuario } from "../API/Usuarios_Api";
 
 const windowWidth = Dimensions.get("window").width;
 const windowheight = Dimensions.get("window").height;
@@ -20,9 +21,8 @@ export function Ingreso({ navigation }) {
   });
 
   // Estados para los datos de entrada
-  const [correo, setCorreo] = useState("");
-  const [contrasena, setContrasena] = useState("");
-  const [noCerrarSesion, setNoCerrarSesion] = useState(false);
+  const [email, setCorreo] = useState("");
+  const [password, setContrasena] = useState("");
 
   useEffect(() => {
     const fetch_Datos = async () => {
@@ -40,23 +40,30 @@ export function Ingreso({ navigation }) {
     setContrasena(text);
   };
 
-  const handleNoCerrarSesionChange = () => {
-    setNoCerrarSesion(!noCerrarSesion);
+
+
+  const mandarUsuario2 = async () => {
+    const datosUsuario = {
+      email,
+      password,
+    };
+    console.log("antes de entro");
+    const resultadoAPI = await ComprobarUsuario(datosUsuario);
+    console.log("entro");
+    if (resultadoAPI) {
+      Alert.alert("Registro exitoso");
+      navigation.navigate("BottomMenu");
+    } else {
+      Alert.alert("Error en Inicio");
+    }
   };
 
   const handleIniciarSesion = () => {
-    // Muestra una alerta con los valores de los campos
-    const mensaje = `Correo: ${correo}\nContraseña: ${contrasena}\nNo Cerrar Sesión: ${noCerrarSesion}`;
-    Alert.alert("Valores de los campos", mensaje);
-    navigation.navigate("BottomMenu", { navigation: navigation });
-
-    // Puedes realizar otras acciones según sea necesario
-    // navigation.navigate("BottomMenu", { navigation: navigation });
+    mandarUsuario2();
   };
   const handleIniciarSesion1 = () => {
     // Muestra una alerta con los valores de los campos
-    const mensaje = `Correo: ${correo}\nContraseña: ${contrasena}\nNo Cerrar Sesión: ${noCerrarSesion}`;
-    Alert.alert("Valores de los campos", mensaje);
+   
     navigation.navigate("Registro", { navigation: navigation });
 
     // Puedes realizar otras acciones según sea necesario
@@ -128,8 +135,8 @@ export function Ingreso({ navigation }) {
         <Switch
           size="$4"
           borderColor={"rgb(113,93,213)"}
-          onValueChange={handleNoCerrarSesionChange}
-          value={noCerrarSesion}
+         
+          
         >
           <Switch.Thumb
             backgroundColor={"rgb(113,93,213)"}

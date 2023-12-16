@@ -8,32 +8,28 @@ import {
   XStack,
   Paragraph,
 } from "tamagui";
-import {
-  Font,
-  useFonts,
-  Rubik_300Light,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-  Rubik_600SemiBold,
-} from "@expo-google-fonts/rubik";
 import { Dimensions } from "react-native";
 import { useState } from "react";
 import Servicios from "../components/Servicios";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
 import DemoSlider from "../components/DemoSlider";
+import { useFonts } from "@expo-google-fonts/rubik";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DetalleLugar({ route, navigation }) {
-  const fonts = {
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Rubik_600SemiBold,
-  };
+export function DetalleLugar({ route }) {
+  // Cargar Fonts
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Regular: require("@expo-google-fonts/rubik/Rubik_400Regular.ttf"),
+    Light: require("@expo-google-fonts/rubik/Rubik_300Light.ttf"),
+    Medium: require("@expo-google-fonts/rubik/Rubik_500Medium.ttf"),
+    Bold: require("@expo-google-fonts/rubik/Rubik_700Bold.ttf"),
+    SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
+    ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
+  });
 
   const loadFontsAsync = async () => {
     try {
@@ -46,7 +42,12 @@ export function DetalleLugar({ route, navigation }) {
   loadFontsAsync();
 
   const { lugar } = route.params;
-  let servicios = lugar.servicios;
+  // const lugar = route.params;
+  // console.log(
+  //   "Servicios: " + lugar.servicios + " --- " + typeof lugar.servicios
+  // );
+  // let servicios = lugar.servicios.split(",");
+  // console.log("Servicios: " + servicios);
 
   function getFechaManana() {
     var fecha = new Date();
@@ -80,7 +81,6 @@ export function DetalleLugar({ route, navigation }) {
           paddingTop="$4"
           position="absolute"
           color="white"
-          fontStyle="b"
         >
           {lugar.nombre}
         </H3>
@@ -105,10 +105,9 @@ export function DetalleLugar({ route, navigation }) {
           paddingLeft="$5"
           paddingTop="$5"
         >
-          {/* {servicios.length > 0 ? "Servicios" : ""} */}
           Servicios
         </H4>
-        <Servicios icons={servicios} />
+        {/* <Servicios icons={servicios} /> */}
 
         <H4
           size="$8"
@@ -118,7 +117,6 @@ export function DetalleLugar({ route, navigation }) {
         >
           Ubicación
         </H4>
-        {/* <Paragraph alignSelf="left" paddingTop="$2" paddingHorizontal="$4"> */}
         <Paragraph
           size="$4"
           fontFamily={"Rubik_400Regular"}
@@ -129,7 +127,7 @@ export function DetalleLugar({ route, navigation }) {
         </Paragraph>
       </View>
 
-      <XStack alignSelf="center" paddingVertical="$2">
+      {/* <XStack alignSelf="center" paddingVertical="$2">
         <View alignSelf="left" alignItems="center" paddingRight="$6">
           <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
             ENTRADA
@@ -148,7 +146,7 @@ export function DetalleLugar({ route, navigation }) {
             callbackActualizarFecha={actualizarFechaSalida}
           />
         </View>
-      </XStack>
+      </XStack>  */}
       <DemoSlider />
       <DemoForm fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} />
     </ScrollView>

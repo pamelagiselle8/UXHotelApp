@@ -18,7 +18,7 @@ import { useFonts } from "@expo-google-fonts/rubik";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DemoCard({ lugar, navigation }) {
+export function DemoCard({ key, lugar, navigation }) {
   // Cargar Fonts
   const [loaded] = useFonts({
     Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),

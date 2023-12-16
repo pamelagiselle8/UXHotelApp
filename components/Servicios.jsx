@@ -111,13 +111,15 @@ function getIcono(icono) {
 }
 
 export function Servicios(props) {
+  console.log("PROPS 200: " + props);
   return (
     <XGroup alignSelf="center" left="$-3">
-      {props.icons.map((element, index) => (
+      {props.map((element, index) => (
         <XGroup.Item key={index}>{getIcono(element)}</XGroup.Item>
       ))}
     </XGroup>
   );
 }
-
+// imprimamos los props exactamente
 export default Servicios;
+// no hagas nada ahorita que esta cargando

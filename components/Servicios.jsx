@@ -102,7 +102,6 @@ export function Servicios(props) {
   return (
     <XGroup alignSelf="center" paddingTop="$4">
       {props.icons.map((element, index) => (
-        // <XGroup.Item key={index}>{getIcono(element)}</XGroup.Item>
         <YGroup alignItems="center">
           <ListItem
             alignContent="center"
@@ -119,15 +118,6 @@ export function Servicios(props) {
             {getDescripcion(element)}
           </ListItem>
         </YGroup>
-
-        // <XGroup.Item>
-        //   <ListItem
-        //     width="$10"
-        //     backgroundColor={"$backgroundTransparent"}
-        //     icon={getIcono(element)}
-        //   >{getDescripcion(element)}</ListItem>
-        //   {/* <ListItem></ListItem> */}
-        // </XGroup.Item>
       ))}
     </XGroup>
   );

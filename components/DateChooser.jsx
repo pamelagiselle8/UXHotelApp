@@ -31,7 +31,7 @@ export function DateChooser({ fechaInicio, callbackActualizarFecha }) {
           theme="active"
           onPress={handleOnPressStartDate}
         >
-          <Paragraph size={"$4"}>
+          <Paragraph size={"$5"}>
             {selectedStartDate === "" ? startDate : selectedStartDate}
           </Paragraph>
         </Button>

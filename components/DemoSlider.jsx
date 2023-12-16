@@ -1,4 +1,4 @@
-import { H5, Slider, Text, View, styled } from "tamagui";
+import { Paragraph, Slider, Text, View, styled } from "tamagui";
 import { useState } from "react";
 
 const CustomSliderTrack = styled(Slider.Track, {
@@ -13,10 +13,10 @@ export function DemoSlider() {
   }
 
   return (
-    <View paddingVertical="$5" alignItems="center">
-      <H5 paddingBottom="$5">
+    <View alignItems="center">
+      <Paragraph size={"$6"} paddingBottom="$5">
         {selectedValue} persona{selectedValue > 1 ? "s" : ""}
-      </H5>
+      </Paragraph>
       <Slider
         size="$3"
         width={200}

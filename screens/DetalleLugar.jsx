@@ -7,6 +7,7 @@ import {
   H6,
   XStack,
   Paragraph,
+  Separator,
 } from "tamagui";
 import { Dimensions } from "react-native";
 import { useState } from "react";
@@ -30,16 +31,6 @@ export function DetalleLugar({ route }) {
     SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
     ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
   });
-
-  const loadFontsAsync = async () => {
-    try {
-      // Carga las fuentes de manera asíncrona
-      await Font.loadAsync(fonts);
-    } catch (error) {
-      // console.error("Error al cargar las fuentes:", error);
-    }
-  };
-  loadFontsAsync();
 
   const { lugar } = route.params;
   let servicios = lugar.servicios;
@@ -73,12 +64,15 @@ export function DetalleLugar({ route }) {
         />
         <H3
           alignSelf="center"
-          paddingTop="$4"
+          paddingTop="$6"
           position="absolute"
           color="white"
+          fontFamily={"SemiBold"}
+          size="$9"
         >
           {lugar.nombre}
         </H3>
+        {/* <Paragraph>{lugar.precio}</Paragraph> */}
       </View>
 
       <View paddingTop="$10">
@@ -90,31 +84,26 @@ export function DetalleLugar({ route }) {
           }}
           width={windowWidth - 50}
           borderRadius="$10"
-          marginTop="$3"
+          marginTop="$10"
           alignSelf="center"
         />
 
         <H4
           size="$8"
-          fontFamily={"Rubik_600SemiBold"}
-          paddingLeft="$5"
+          fontFamily={"SemiBold"}
+          alignSelf="center"
           paddingTop="$5"
         >
           Servicios
         </H4>
         <Servicios icons={servicios} />
 
-        <H4
-          size="$8"
-          fontFamily={"Rubik_600SemiBold"}
-          paddingLeft="$5"
-          paddingTop="$5"
-        >
+        <H4 size="$8" fontFamily={"SemiBold"} paddingLeft="$5" paddingTop="$5">
           Ubicación
         </H4>
         <Paragraph
-          size="$4"
-          fontFamily={"Rubik_400Regular"}
+          size="$5"
+          fontFamily={"Regular"}
           paddingLeft="$5"
           paddingTop="$2"
         >
@@ -122,27 +111,40 @@ export function DetalleLugar({ route }) {
         </Paragraph>
       </View>
 
-      {/* <XStack alignSelf="center" paddingVertical="$2">
-        <View alignSelf="left" alignItems="center" paddingRight="$6">
-          <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
-            ENTRADA
+      <H4
+        size="$8"
+        fontFamily={"SemiBold"}
+        paddingLeft="$5"
+        paddingBottom="$4"
+        paddingTop="$8"
+      >
+        Fecha de estadía
+      </H4>
+      <XStack alignSelf="center" paddingBottom="$8">
+        <View alignItems="center" paddingRight="$8">
+          <H6 size="$6" fontFamily={"Regular"}>
+            Entrada
           </H6>
           <DateChooser
             fechaInicio={new Date()}
             callbackActualizarFecha={actualizarFechaEntrada}
           />
         </View>
-        <View alignSelf="right" alignItems="center">
-          <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
-            SALIDA
+        <View alignItems="center">
+          <H6 size="$6" fontFamily={"Regular"}>
+            Salida
           </H6>
           <DateChooser
             fechaInicio={getFechaManana()}
             callbackActualizarFecha={actualizarFechaSalida}
           />
         </View>
-      </XStack>  */}
+      </XStack>
+      <H4 size="$8" fontFamily={"SemiBold"} paddingLeft="$5" paddingBottom="$5">
+        Cantidad de personas
+      </H4>
       <DemoSlider />
+      <Separator paddingBottom="$6" />
       <DemoForm fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} />
     </ScrollView>
   );

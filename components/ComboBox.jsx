@@ -14,7 +14,7 @@ import {
   getFontSize,
 } from "tamagui";
 
-export function ComboBox({ callbackCategoria }) {
+export function ComboBox({ categoria, callbackCategoria }) {
   const [lugares, setLugares] = useState([]);
   const categorias = [...new Set(lugares.map((lugar) => lugar.categoria))];
   const items = categorias.map((categoria, index) => ({
@@ -31,14 +31,11 @@ export function ComboBox({ callbackCategoria }) {
     fetchDatos();
   }, []);
 
-  const [val, setVal] = useState("");
-
   return (
     <Select
       id="categoria"
-      value={val}
+      // value={categoria}
       onValueChange={(value) => {
-        setVal;
         callbackCategoria(value);
       }}
       disablePreventBodyScroll

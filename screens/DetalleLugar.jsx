@@ -11,11 +11,13 @@ import {
 } from "tamagui";
 import { Dimensions } from "react-native";
 import { useState } from "react";
+import { getFormatedDate } from "react-native-modern-datepicker";
+import { useFonts } from "@expo-google-fonts/rubik";
+
 import Servicios from "../components/Servicios";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
 import DemoSlider from "../components/DemoSlider";
-import { useFonts } from "@expo-google-fonts/rubik";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -112,7 +114,7 @@ export function DetalleLugar({ route }) {
         </H4>
         <Servicios icons={servicios} />
 
-        <H4 size="$8" fontFamily={"SemiBold"} paddingLeft="$5" paddingTop="$6">
+        <H4 size="$7" fontFamily={"SemiBold"} paddingLeft="$5" paddingTop="$6">
           Ubicación
         </H4>
         <Paragraph
@@ -136,7 +138,7 @@ export function DetalleLugar({ route }) {
       </H4>
       <XStack alignSelf="center" paddingBottom="$8">
         <View alignItems="center" paddingRight="$8">
-          <H6 size="$6" fontFamily={"Regular"}>
+          <H6 size="$5" fontFamily={"Regular"}>
             Entrada
           </H6>
           <DateChooser
@@ -164,9 +166,9 @@ export function DetalleLugar({ route }) {
       <H4 alignSelf="center" size="$9" fontFamily={"SemiBold"} paddingTop="$3">
         ${total}
       </H4>
-      <Separator paddingBottom="$6" />
+      <Separator paddingBottom="$5" />
       {/* fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} */}
-      <DemoForm total={total} setTotal={actualizarTotal} />
+      <DemoForm route={route} fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} idUsuario={1} />
     </ScrollView>
   );
 }

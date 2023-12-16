@@ -2371,6 +2371,15 @@
     "@tamagui/text" "1.79.7"
     "@tamagui/use-controllable-state" "1.79.7"
 
+"@tamagui/animate-presence@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/animate-presence/-/animate-presence-1.79.12.tgz#8c5667d0cd71b60e8a4b8c401b7f48373525b1d2"
+  integrity sha512-BLYPB+DhHufrwOo+48Vc5KozE/zOKfXR5+kPFNl08ZuLV6jZZPuRTQ7no0Y8LtSx7p+HvuAEl++wknjdVsCfrA==
+  dependencies:
+    "@tamagui/use-force-update" "1.79.12"
+    "@tamagui/use-presence" "1.79.12"
+    "@tamagui/web" "1.79.12"
+
 "@tamagui/animate-presence@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/animate-presence/-/animate-presence-1.79.7.tgz"
@@ -2553,6 +2562,11 @@
     "@tamagui/use-event" "1.79.7"
     "@tamagui/web" "1.79.7"
 
+"@tamagui/create-context@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/create-context/-/create-context-1.79.12.tgz#56a7ca7975da62734a9d7f3fc5fb2c694dc17a86"
+  integrity sha512-FksZ0g5Xhrw5IC0N5dsksWuTnYKGMdBtDzslzDGBqU21aS+bGga2rHmxO8zMiMoWhDGn9SRLzhu8K/DT064Hmw==
+
 "@tamagui/create-context@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/create-context/-/create-context-1.79.7.tgz"
@@ -2591,6 +2605,16 @@
     "@tamagui/stacks" "1.79.7"
     "@tamagui/text" "1.79.7"
     "@tamagui/use-controllable-state" "1.79.7"
+
+"@tamagui/dismissable@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/dismissable/-/dismissable-1.79.12.tgz#f0bcb801b1f7486d2901a298fe5c77fd12138a4e"
+  integrity sha512-FykZruyjXnW5bqlQ0jCwQrx1KZ/fK6PjUIvoIHlNfQ+z8Utb7RATbtMqdc/GdKbJJtrpvbC9ZR5B3LGVFcf+tA==
+  dependencies:
+    "@tamagui/compose-refs" "1.79.12"
+    "@tamagui/core" "1.79.12"
+    "@tamagui/use-escape-keydown" "1.79.12"
+    "@tamagui/use-event" "1.79.12"
 
 "@tamagui/dismissable@1.79.7":
   version "1.79.7"
@@ -2681,6 +2705,13 @@
     "@tamagui/get-token" "1.79.7"
     "@tamagui/web" "1.79.7"
 
+"@tamagui/get-font-sized@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/get-font-sized/-/get-font-sized-1.79.12.tgz#5a1d452e5cf2bdb3b757d3a2b00b44e9b2b46da3"
+  integrity sha512-fdNHeaBzHmezKVlm6+RgJ5HqlGKnHqiNapHE0c2ksn/kSxOUtIjkM2DCpNJsOvz01IuhK7DjGtJPPy157u6Btw==
+  dependencies:
+    "@tamagui/core" "1.79.12"
+
 "@tamagui/get-font-sized@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/get-font-sized/-/get-font-sized-1.79.7.tgz"
@@ -2712,6 +2743,14 @@
   integrity sha512-n/9VAh7ls3BX76WKmZm+fpbxGwvdyqi3+VghGQL0lY3LdkO21WIAZ7l3sWOVraal9F8hhiN2FMx5opOoxbp0GQ==
   dependencies:
     "@tamagui/core" "1.79.7"
+
+"@tamagui/helpers-tamagui@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/helpers-tamagui/-/helpers-tamagui-1.79.12.tgz#6d60d79fb97788a80d3d567a58e0692639de69b0"
+  integrity sha512-74li1Vb1AXkgvJ8E7ZbCTLoyyZ28Rgrf3yI23D/pw7WKfTkfa25AICfYH4k5ML3pb3VeBOa13w6SjoGVbLvFsA==
+  dependencies:
+    "@tamagui/helpers" "1.79.12"
+    "@tamagui/web" "1.79.12"
 
 "@tamagui/helpers-tamagui@1.79.7":
   version "1.79.7"
@@ -2799,6 +2838,11 @@
   dependencies:
     "@react-native/normalize-color" "^2.1.0"
 
+"@tamagui/polyfill-dev@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/polyfill-dev/-/polyfill-dev-1.79.12.tgz#89b3f750e6f4549c3db24fce2c2357b8c254790e"
+  integrity sha512-w17snKo8gkRh5mROGrMjNysGUQfFziNdXffdPUjW3wXUWDh8Ee+U1xj1/gTkPTSh3cFACzMbAh28F9MzWMQgXw==
+
 "@tamagui/polyfill-dev@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/polyfill-dev/-/polyfill-dev-1.79.7.tgz"
@@ -2839,6 +2883,15 @@
     "@tamagui/get-token" "1.79.7"
     "@tamagui/stacks" "1.79.7"
     "@tamagui/use-controllable-state" "1.79.7"
+
+"@tamagui/portal@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/portal/-/portal-1.79.12.tgz#e51376cb3778eb4c6b13f18d232b891e71b816b4"
+  integrity sha512-USs+zUHpr/h7qoQL/9rLY4r1AdC35s6hQIBu5KeXGJlGOev12jcK4SORXlLHGDUbCZMpTnxwgh9YwwaHnRk35Q==
+  dependencies:
+    "@tamagui/core" "1.79.12"
+    "@tamagui/stacks" "1.79.12"
+    "@tamagui/use-event" "1.79.12"
 
 "@tamagui/portal@1.79.7":
   version "1.79.7"
@@ -3020,6 +3073,13 @@
     "@tamagui/use-controllable-state" "1.79.7"
     "@tamagui/use-direction" "1.79.7"
 
+"@tamagui/stacks@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/stacks/-/stacks-1.79.12.tgz#ff84af300bd70d76e018173968aa9f7807fe1379"
+  integrity sha512-swGwk7p4c35lxpR48bIRubDAfQXoXyV8P3Wo2iVlRD2t3yJeoF9ncrm4NFVSQhEBsU9h8xUDjopej0GBZW04TQ==
+  dependencies:
+    "@tamagui/core" "1.79.12"
+
 "@tamagui/stacks@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/stacks/-/stacks-1.79.7.tgz"
@@ -3055,6 +3115,15 @@
     "@tamagui/use-controllable-state" "1.79.7"
     "@tamagui/use-direction" "1.79.7"
     "@tamagui/web" "1.79.7"
+
+"@tamagui/text@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/text/-/text-1.79.12.tgz#8acf5ce2f78edd35bdc97f3e5f700425095b3780"
+  integrity sha512-AwH+WhEuiOevzhqWNZJs5PjHGM+lZg2lrwbDNLSY2basN9UUsZkMBXarldbN7qYc4A9KHUBJ/eJQZ0BDzLoWQA==
+  dependencies:
+    "@tamagui/get-font-sized" "1.79.12"
+    "@tamagui/helpers-tamagui" "1.79.12"
+    "@tamagui/web" "1.79.12"
 
 "@tamagui/text@1.79.7":
   version "1.79.7"
@@ -3101,6 +3170,23 @@
   resolved "https://registry.npmjs.org/@tamagui/timer/-/timer-1.79.7.tgz"
   integrity sha512-3l4lxb9k0XijOq+Mv6HuwlBCeWmmExObMxarXbwQsO09+v+a6Zr0ED//GRSduany0vh/AsGw87EXl4lGjD5i2A==
 
+"@tamagui/toast@^1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/toast/-/toast-1.79.12.tgz#ad1d3752238f7fc49a5e6cb57a8247eff7c0b191"
+  integrity sha512-5kBurTE23USOGRwdeXH3c7gNoxGUx7ECS0N+ekOR0ZUwab0LHH5MBCrNz85A0s2qkq5rXOovJalN/BARt73r8g==
+  dependencies:
+    "@tamagui/animate-presence" "1.79.12"
+    "@tamagui/compose-refs" "1.79.12"
+    "@tamagui/core" "1.79.12"
+    "@tamagui/create-context" "1.79.12"
+    "@tamagui/dismissable" "1.79.12"
+    "@tamagui/polyfill-dev" "1.79.12"
+    "@tamagui/portal" "1.79.12"
+    "@tamagui/stacks" "1.79.12"
+    "@tamagui/text" "1.79.12"
+    "@tamagui/use-controllable-state" "1.79.12"
+    "@tamagui/visually-hidden" "1.79.12"
+
 "@tamagui/toggle-group@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/toggle-group/-/toggle-group-1.79.7.tgz"
@@ -3136,6 +3222,11 @@
     "@tamagui/text" "1.79.7"
     "@tamagui/use-controllable-state" "1.79.7"
 
+"@tamagui/use-callback-ref@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/use-callback-ref/-/use-callback-ref-1.79.12.tgz#32de6089f45521ac2631e9924c5d1ce87ab0098d"
+  integrity sha512-rpph/WRI2skFAFDar/n4aP/noTA2oyuE7TB6UPER6PvDrxiFWNthzR1dM318nLNx3UNMWmdsyOLzvVWWoN9XoA==
+
 "@tamagui/use-callback-ref@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/use-callback-ref/-/use-callback-ref-1.79.7.tgz"
@@ -3145,6 +3236,13 @@
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/use-constant/-/use-constant-1.79.7.tgz"
   integrity sha512-4Cr17BzYx53qTSHikdvDf7u/r0LMXbTN01F6dZ3vCxCABW+Bb/XgnyymKaecvs8AHr1ZzTbJAqYuuF3lfDbWaw==
+
+"@tamagui/use-controllable-state@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/use-controllable-state/-/use-controllable-state-1.79.12.tgz#db7faa447e592cd6809e081783047e0b4aef11fe"
+  integrity sha512-wZtwmjLPddMJHdLRCIWXhV98RBnnE9+kyq+juNn8XFRqkf0EsRK+1ONyZDBHHwu1sWpw+kMtb+XX0ksnOZyLrw==
+  dependencies:
+    "@tamagui/use-event" "1.79.12"
 
 "@tamagui/use-controllable-state@1.79.7":
   version "1.79.7"
@@ -3176,6 +3274,13 @@
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/use-direction/-/use-direction-1.79.7.tgz"
   integrity sha512-QiMDAHWBDSAZZ+ClWCDD6BRXFEli73Qzw3S2P2JZuwCd1uPZGyJC0DbWiu/5jODfqUZ1mI5X2mgF5RaJjAEugA==
+
+"@tamagui/use-escape-keydown@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/use-escape-keydown/-/use-escape-keydown-1.79.12.tgz#bd64294abfb64a4347cae4571c173eb70e4cc04a"
+  integrity sha512-L7aA3ZVDXYMfEj6wIhJgmax0s/GIgMpBFw3RYipITVTGZo02PC0HSIjaoigrYpyR4rWG/sS4vobuHbIoeugbiA==
+  dependencies:
+    "@tamagui/use-callback-ref" "1.79.12"
 
 "@tamagui/use-escape-keydown@1.79.7":
   version "1.79.7"
@@ -3209,6 +3314,13 @@
   resolved "https://registry.npmjs.org/@tamagui/use-keyboard-visible/-/use-keyboard-visible-1.79.7.tgz"
   integrity sha512-LFYM+gmtF5CdWG0l5DZijGJY3j0as1F/xl76lQDsUghYt95z/FqpSIT5wAysRqC3W5bdG0h2WdwJHp9vpwzIsQ==
 
+"@tamagui/use-presence@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/use-presence/-/use-presence-1.79.12.tgz#1710867b57b2d70b0e6b2d8a8d5b51da68b01d2d"
+  integrity sha512-hfPSlPrMm+leLSN4KrJ2eLeJ2KKX+1XHqNS/cbk5Z9hXfqWjSHeTy9TeuY6UbATuyQi8npwlNthctAaVm2yxKQ==
+  dependencies:
+    "@tamagui/web" "1.79.12"
+
 "@tamagui/use-presence@1.79.7":
   version "1.79.7"
   resolved "https://registry.npmjs.org/@tamagui/use-presence/-/use-presence-1.79.7.tgz"
@@ -3227,6 +3339,13 @@
   integrity sha512-rkEYhVxTaq7fE3oTBkOMqmLrnuvXHadoWWtAbM3Pj2DdkVXFd3HmH4+4wQIq5h8FAJq+a0C0hbMxsKuQgoL61w==
   dependencies:
     "@tamagui/constants" "1.79.7"
+
+"@tamagui/visually-hidden@1.79.12":
+  version "1.79.12"
+  resolved "https://registry.yarnpkg.com/@tamagui/visually-hidden/-/visually-hidden-1.79.12.tgz#f72d54b011e825ea71e3c1f3d07fd028cd647319"
+  integrity sha512-13B6YTrwC3eJmaDNviZUj86vqjhy80BtGgVILJtXsvOe1Y3Ceuu/UjG5Urc++06Q1NE3vpo1+qUZKOjhN32hPQ==
+  dependencies:
+    "@tamagui/web" "1.79.12"
 
 "@tamagui/visually-hidden@1.79.7":
   version "1.79.7"
@@ -3904,6 +4023,14 @@ builtins@^5.0.0:
   integrity sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==
   dependencies:
     semver "^7.0.0"
+
+burnt@^0.12.1:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/burnt/-/burnt-0.12.1.tgz#48d9db0115dc9016ba0420db2b68c943bcbe84c8"
+  integrity sha512-a5EQvG8CR1JDmOyY9aiUORnJ39wpmZMMva5qbCTXadtNJAjLDZTvrmp7cvYB9i+Jfe1wVhvCCFfEios7M9/88Q==
+  dependencies:
+    sf-symbols-typescript "^1.0.0"
+    sonner "^0.3.5"
 
 bytes@3.0.0:
   version "3.0.0"
@@ -7876,6 +8003,11 @@ react-native-svg@13.4.0:
     css-select "^5.1.0"
     css-tree "^1.1.3"
 
+react-native-toast-message@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.2.0.tgz#c53a4746b15616858a7d61c4386b92cbe9fbf911"
+  integrity sha512-AFti8VzUk6JvyGAlLm9/BknTNDXrrhqnUk7ak/pM7uCTxDPveAu2ekszU0on6vnUPFnG04H/QfYE2IlETqeaWw==
+
 react-native@0.71.14:
   version "0.71.14"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.71.14.tgz#df12b405a7913b736de01b0347af14e4be7bf324"
@@ -8363,6 +8495,11 @@ setprototypeof@1.2.0:
   resolved "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz"
   integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
 
+sf-symbols-typescript@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/sf-symbols-typescript/-/sf-symbols-typescript-1.0.0.tgz#94e9210bf27e7583f9749a0d07bd4f4937ea488f"
+  integrity sha512-DkS7q3nN68dEMb4E18HFPDAvyrjDZK9YAQQF2QxeFu9gp2xRDXFMF8qLJ1EmQ/qeEGQmop4lmMM1WtYJTIcCMw==
+
 shallow-clone@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/shallow-clone/-/shallow-clone-3.0.1.tgz"
@@ -8489,6 +8626,11 @@ socks@^2.7.1:
   dependencies:
     ip "^2.0.0"
     smart-buffer "^4.2.0"
+
+sonner@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/sonner/-/sonner-0.3.5.tgz#5ef175732cb7b637c6460620ab01a0fba0e6a36b"
+  integrity sha512-yIwaQ4dftMvFApuruto2t7wGyyaPRpj5qYBWYJIz4Z7uGcVn0IfqI/hWN0JyJN4izNbZFuCYZISf3fOGnvSlNQ==
 
 source-map-support@^0.5.16, source-map-support@~0.5.20:
   version "0.5.21"

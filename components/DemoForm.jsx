@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Button, Form, H4, Spinner } from "tamagui";
 import { Dimensions } from "react-native";
+import axios from "axios";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DemoForm() {
+export function DemoForm({ route, fechaEntrada, fechaSalida, idUsuario }) {
+  const { alojamiento } = route.params;
+
   const [status, setStatus] = useState("off");
 
   function getTextoBoton(status) {
@@ -23,8 +26,33 @@ export function DemoForm() {
 
   useEffect(() => {
     if (status === "submitting") {
+      // Guardar reservacion aqui
+      const reservacion = {
+        fechaEntrada: fechaEntrada,
+        fechaSalida: fechaSalida,
+        idUsuario: idUsuario,
+      };
+      console.log("alojamiento " + { alojamiento });
+      console.log("reservacion " + { reservacion });
+      const fetchDatos = async () => {
+        try {
+          const response = await axios.put(
+            "https://w4sbwwxb-3000.use.devtunnels.ms/crearReservacion",
+            {
+              body: { alojamiento, reservacion },
+              "context-type": "application/x-www-form-urlencoded",
+            }
+          );
+          console.log(response);
+          console.log("PAPAYA");
+        } catch (error) {
+          console.log("Error al enviar solicitud get: ", error);
+        }
+        console.log("Respuesta del servidor: ", response.data);
+      };
+      fetchDatos();
+      console.log("sali");
       const timer = setTimeout(() => {
-        // Guardar reservacion aqui
         setStatus("submitted");
       }, 2000);
       return () => {

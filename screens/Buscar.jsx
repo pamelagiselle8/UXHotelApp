@@ -7,62 +7,33 @@ import {
   H6,
   XStack,
   Paragraph,
+  Button,
 } from "tamagui";
-import {
-  Font,
-  // useFonts,
-  Rubik_300Light,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-  Rubik_600SemiBold,
-} from "@expo-google-fonts/rubik";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions } from "react-native";
 import { useState, useEffect } from "react";
 import { DemoCard } from "../components/DemoCard";
 import { Separator } from "tamagui";
 import axios from "axios";
-import ComboBox from "../components/ComboBox";
 import { useFonts } from "expo-font";
 
-function cargarFonts() {
-  const [loaded] = useFonts({
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
-    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
-    Rubik: require("@expo-google-fonts/rubik"),
-    Rubik_300Light: require("@expo-google-fonts/rubik"),
-    Rubik_600SemiBold: require("@expo-google-fonts/rubik"),
-    Rubik_400Regular: require("@expo-google-fonts/rubik"),
-    Rubik_500Medium: require("@expo-google-fonts/rubik"),
-    Rubik_700Bold: require("@expo-google-fonts/rubik"),
-  });
-
-  return loaded;
-}
+import ComboBox from "../components/ComboBox";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 function Buscar({ navigation }) {
-  const fonts = {
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Rubik_600SemiBold,
-  };
-
-  const loadFontsAsync = async () => {
-    try {
-      // Carga las fuentes de manera asíncrona
-      // await Font.loadFontsAsync(fonts);
-      cargarFonts();
-    } catch (error) {
-      console.error("Error al cargar las fuentes:", error);
-    }
-  };
-  loadFontsAsync();
+  // Cargar Fonts
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Regular: require("@expo-google-fonts/rubik/Rubik_400Regular.ttf"),
+    Light: require("@expo-google-fonts/rubik/Rubik_300Light.ttf"),
+    Medium: require("@expo-google-fonts/rubik/Rubik_500Medium.ttf"),
+    Bold: require("@expo-google-fonts/rubik/Rubik_700Bold.ttf"),
+    SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
+    ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
+  });
 
   const [lugares, setLugares] = useState([]);
 
@@ -106,7 +77,7 @@ function Buscar({ navigation }) {
             paddingTop="$6"
             position="absolute"
             color="white"
-            fontFamily={"Rubik_700Bold"}
+            fontFamily={"Bold"}
             fontSize={28}
           >
             Encuentra
@@ -117,13 +88,13 @@ function Buscar({ navigation }) {
             paddingBottom="$5"
             position="absolute"
             color="mistyrose"
-            fontFamily={"Rubik_300Light"}
+            fontFamily={"Light"}
             fontSize={18}
           >
             EL MEJOR LUGAR
           </H5>
           <View alignSelf="center" position="absolute" paddingTop="$15">
-            <ComboBox callbackCategoria={setCategoria} />
+            <ComboBox callbackCategoria={actualizarCategoria} />
           </View>
           <View
             alignSelf="center"

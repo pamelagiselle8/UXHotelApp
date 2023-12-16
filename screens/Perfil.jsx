@@ -40,7 +40,7 @@ export function Inicio({ navigation }) {
       <View alignItems="center" paddingTop="40%">
         <DemoAvatar
           imageUrl={
-            Math.random(1) + 0 === 1
+            Math.random() === 1
               ? "https://img.freepik.com/vector-premium/dibujos-animados-perfil-mujer_18591-58480.jpg?w=2000"
               : "https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?size=626&ext=jpg"
           }

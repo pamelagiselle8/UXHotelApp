@@ -4,7 +4,7 @@ import { Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DemoForm({ fechaEntrada, fechaSalida }) {
+export function DemoForm() {
   const [status, setStatus] = useState("off");
 
   function getTextoBoton(status) {

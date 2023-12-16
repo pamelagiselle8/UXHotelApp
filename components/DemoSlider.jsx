@@ -5,10 +5,11 @@ const CustomSliderTrack = styled(Slider.Track, {
   backgroundColor: "lightgray",
 });
 
-export function DemoSlider() {
+export function DemoSlider({ costo, callbackSetTotal }) {
   const [selectedValue, setSelectedValue] = useState(1);
 
   function handleSliderChange(props) {
+    callbackSetTotal(props * costo);
     setSelectedValue(props);
   }
 

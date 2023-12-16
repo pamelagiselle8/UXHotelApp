@@ -35,6 +35,11 @@ export function DetalleLugar({ route }) {
   const { lugar } = route.params;
   let servicios = lugar.servicios;
 
+  const [total, setTotal] = useState(lugar.costo);
+  function actualizarTotal(nuevoTotal) {
+    setTotal(nuevoTotal);
+  }
+
   function getFechaManana() {
     var fecha = new Date();
     fecha.setDate(fecha.getDate() + 1);
@@ -152,15 +157,16 @@ export function DetalleLugar({ route }) {
       <H4 size="$7" fontFamily={"Medium"} paddingLeft="$5" paddingBottom="$5">
         Cantidad de personas
       </H4>
-      <DemoSlider />
+      <DemoSlider costo={lugar.costo} callbackSetTotal={setTotal} />
       <H4 alignSelf="center" size="$7" fontFamily={"Medium"} paddingTop="$10">
         Total a pagar
       </H4>
       <H4 alignSelf="center" size="$9" fontFamily={"SemiBold"} paddingTop="$3">
-        $
+        ${total}
       </H4>
       <Separator paddingBottom="$6" />
-      <DemoForm fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} />
+      {/* fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} */}
+      <DemoForm total={total} setTotal={actualizarTotal} />
     </ScrollView>
   );
 }

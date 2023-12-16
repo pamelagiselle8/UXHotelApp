@@ -42,12 +42,7 @@ export function DetalleLugar({ route }) {
   loadFontsAsync();
 
   const { lugar } = route.params;
-  // const lugar = route.params;
-  // console.log(
-  //   "Servicios: " + lugar.servicios + " --- " + typeof lugar.servicios
-  // );
-  // let servicios = lugar.servicios.split(",");
-  // console.log("Servicios: " + servicios);
+  let servicios = lugar.servicios;
 
   function getFechaManana() {
     var fecha = new Date();
@@ -107,7 +102,7 @@ export function DetalleLugar({ route }) {
         >
           Servicios
         </H4>
-        {/* <Servicios icons={servicios} /> */}
+        <Servicios icons={servicios} />
 
         <H4
           size="$8"

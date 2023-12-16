@@ -15,11 +15,10 @@ function getIcono(icono) {
     case 1:
       return (
         <ListItem
-          width="5"
+          width="$5"
           size="$5"
           icon={Wifi}
           color="$color.blue10Light"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Wifi</Paragraph>
@@ -28,11 +27,10 @@ function getIcono(icono) {
     case 2:
       return (
         <ListItem
-          width="5"
+          width="$13"
           size="$5"
           icon={Cat}
           color="$color.purple10Light"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Pet Friendly</Paragraph>
@@ -41,11 +39,10 @@ function getIcono(icono) {
     case 3:
       return (
         <ListItem
-          width="5"
+          width="$13"
           size="$5"
           icon={Tv2}
           color="red"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Netflix</Paragraph>
@@ -54,11 +51,10 @@ function getIcono(icono) {
     case 4:
       return (
         <ListItem
-          width="5"
+          width="$5"
           size="$5"
           icon={Bike}
           color="$color.green10Light"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Ciclismo</Paragraph>
@@ -67,11 +63,10 @@ function getIcono(icono) {
     case 5:
       return (
         <ListItem
-          width="5"
+          width="$5"
           size="$5"
           icon={Coffee}
           color="$color.orange10Dark"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Desayuno</Paragraph>
@@ -80,11 +75,10 @@ function getIcono(icono) {
     case 6: {
       return (
         <ListItem
-          width="5"
+          width="$5"
           size="$5"
           icon={ShowerHead}
           color="red"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>Agua caliente</Paragraph>
@@ -94,11 +88,10 @@ function getIcono(icono) {
     case 7: {
       return (
         <ListItem
-          width="5"
+          width="$5"
           size="$5"
           icon={BedDouble}
           color="$pink10"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
         >
           <Paragraph>King-size</Paragraph>
@@ -111,15 +104,13 @@ function getIcono(icono) {
 }
 
 export function Servicios(props) {
-  console.log("PROPS 200: " + props);
   return (
     <XGroup alignSelf="center" left="$-3">
-      {props.map((element, index) => (
+      {props.icons.map((element, index) => (
         <XGroup.Item key={index}>{getIcono(element)}</XGroup.Item>
       ))}
     </XGroup>
   );
 }
-// imprimamos los props exactamente
+
 export default Servicios;
-// no hagas nada ahorita que esta cargando

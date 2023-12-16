@@ -72,10 +72,19 @@ export function DetalleLugar({ route }) {
         >
           {lugar.nombre}
         </H3>
-        {/* <Paragraph>{lugar.precio}</Paragraph> */}
+        <Paragraph
+          alignSelf="center"
+          paddingTop="$11"
+          position="absolute"
+          color="white"
+          fontFamily={"Regular"}
+          size="$6"
+        >
+          {lugar.categoria}
+        </Paragraph>
       </View>
 
-      <View paddingTop="$10">
+      <View paddingTop="$11">
         <Image
           source={{
             uri: lugar.img,
@@ -92,13 +101,13 @@ export function DetalleLugar({ route }) {
           size="$8"
           fontFamily={"SemiBold"}
           alignSelf="center"
-          paddingTop="$5"
+          paddingTop="$8"
         >
-          Servicios
+          Servicios ofrecidos
         </H4>
         <Servicios icons={servicios} />
 
-        <H4 size="$8" fontFamily={"SemiBold"} paddingLeft="$5" paddingTop="$5">
+        <H4 size="$8" fontFamily={"SemiBold"} paddingLeft="$5" paddingTop="$6">
           Ubicación
         </H4>
         <Paragraph
@@ -112,8 +121,8 @@ export function DetalleLugar({ route }) {
       </View>
 
       <H4
-        size="$8"
-        fontFamily={"SemiBold"}
+        size="$7"
+        fontFamily={"Medium"}
         paddingLeft="$5"
         paddingBottom="$4"
         paddingTop="$8"
@@ -140,10 +149,16 @@ export function DetalleLugar({ route }) {
           />
         </View>
       </XStack>
-      <H4 size="$8" fontFamily={"SemiBold"} paddingLeft="$5" paddingBottom="$5">
+      <H4 size="$7" fontFamily={"Medium"} paddingLeft="$5" paddingBottom="$5">
         Cantidad de personas
       </H4>
       <DemoSlider />
+      <H4 alignSelf="center" size="$7" fontFamily={"Medium"} paddingTop="$10">
+        Total a pagar
+      </H4>
+      <H4 alignSelf="center" size="$9" fontFamily={"SemiBold"} paddingTop="$3">
+        $
+      </H4>
       <Separator paddingBottom="$6" />
       <DemoForm fechaEntrada={fechaEntrada} fechaSalida={fechaSalida} />
     </ScrollView>

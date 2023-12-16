@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Inicio from "../screens/Inicio";
-import DetalleLugar from "../screens/DetalleLugar";
 import { Home, Search, User2 } from "@tamagui/lucide-icons";
+// Screens
+import Inicio from "../screens/Inicio";
 import Buscar from "../screens/Buscar";
 import Perfil from "../screens/Perfil";
 
 const Tab = createBottomTabNavigator();
 
-function BottomMenu() {
+function BottomMenu({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={{

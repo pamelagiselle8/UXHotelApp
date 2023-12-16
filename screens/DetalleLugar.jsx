@@ -7,18 +7,13 @@ import {
   H6,
   XStack,
   Paragraph,
+  Separator,
 } from "tamagui";
-import {
-  Font,
-  useFonts,
-  Rubik_300Light,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-  Rubik_600SemiBold,
-} from "@expo-google-fonts/rubik";
 import { Dimensions } from "react-native";
 import { useState } from "react";
+import { getFormatedDate } from "react-native-modern-datepicker";
+import { useFonts } from "@expo-google-fonts/rubik";
+
 import Servicios from "../components/Servicios";
 import DateChooser from "../components/DateChooser";
 import DemoForm from "../components/DemoForm";
@@ -26,27 +21,26 @@ import DemoSlider from "../components/DemoSlider";
 
 const windowWidth = Dimensions.get("window").width;
 
-export function DetalleLugar({ route, navigation }) {
-  const fonts = {
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Rubik_600SemiBold,
-  };
-
-  const loadFontsAsync = async () => {
-    try {
-      // Carga las fuentes de manera asíncrona
-      await Font.loadAsync(fonts);
-    } catch (error) {
-      // console.error("Error al cargar las fuentes:", error);
-    }
-  };
-  loadFontsAsync();
+export function DetalleLugar({ route }) {
+  // Cargar Fonts
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Regular: require("@expo-google-fonts/rubik/Rubik_400Regular.ttf"),
+    Light: require("@expo-google-fonts/rubik/Rubik_300Light.ttf"),
+    Medium: require("@expo-google-fonts/rubik/Rubik_500Medium.ttf"),
+    Bold: require("@expo-google-fonts/rubik/Rubik_700Bold.ttf"),
+    SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
+    ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
+  });
 
   const { lugar } = route.params;
   let servicios = lugar.servicios;
+
+  const [total, setTotal] = useState(lugar.costo);
+  function actualizarTotal(nuevoTotal) {
+    setTotal(nuevoTotal);
+  }
 
   function getFechaManana() {
     var fecha = new Date();
@@ -77,16 +71,27 @@ export function DetalleLugar({ route, navigation }) {
         />
         <H3
           alignSelf="center"
-          paddingTop="$4"
+          paddingTop="$6"
           position="absolute"
           color="white"
-          fontStyle="b"
+          fontFamily={"SemiBold"}
+          size="$9"
         >
           {lugar.nombre}
         </H3>
+        <Paragraph
+          alignSelf="center"
+          paddingTop="$11"
+          position="absolute"
+          color="white"
+          fontFamily={"Regular"}
+          size="$6"
+        >
+          {lugar.categoria}
+        </Paragraph>
       </View>
 
-      <View paddingTop="$10">
+      <View paddingTop="$11">
         <Image
           source={{
             uri: lugar.img,
@@ -95,33 +100,26 @@ export function DetalleLugar({ route, navigation }) {
           }}
           width={windowWidth - 50}
           borderRadius="$10"
-          marginTop="$3"
+          marginTop="$10"
           alignSelf="center"
         />
 
         <H4
           size="$8"
-          fontFamily={"Rubik_600SemiBold"}
-          paddingLeft="$5"
-          paddingTop="$5"
+          fontFamily={"SemiBold"}
+          alignSelf="center"
+          paddingTop="$8"
         >
-          {/* {servicios.length > 0 ? "Servicios" : ""} */}
-          Servicios
+          Servicios ofrecidos
         </H4>
         <Servicios icons={servicios} />
 
-        <H4
-          size="$8"
-          fontFamily={"Rubik_600SemiBold"}
-          paddingLeft="$5"
-          paddingTop="$5"
-        >
+        <H4 size="$7" fontFamily={"SemiBold"} paddingLeft="$5" paddingTop="$6">
           Ubicación
         </H4>
-        {/* <Paragraph alignSelf="left" paddingTop="$2" paddingHorizontal="$4"> */}
         <Paragraph
-          size="$4"
-          fontFamily={"Rubik_400Regular"}
+          size="$5"
+          fontFamily={"Regular"}
           paddingLeft="$5"
           paddingTop="$2"
         >
@@ -129,19 +127,28 @@ export function DetalleLugar({ route, navigation }) {
         </Paragraph>
       </View>
 
-      <XStack alignSelf="center" paddingVertical="$2">
-        <View alignSelf="left" alignItems="center" paddingRight="$6">
-          <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
-            ENTRADA
+      <H4
+        size="$7"
+        fontFamily={"Medium"}
+        paddingLeft="$5"
+        paddingBottom="$4"
+        paddingTop="$8"
+      >
+        Fecha de estadía
+      </H4>
+      <XStack alignSelf="center" paddingBottom="$8">
+        <View alignItems="center" paddingRight="$8">
+          <H6 size="$5" fontFamily={"Regular"}>
+            Entrada
           </H6>
           <DateChooser
             fechaInicio={new Date()}
             callbackActualizarFecha={actualizarFechaEntrada}
           />
         </View>
-        <View alignSelf="right" alignItems="center">
-          <H6 size="$4" fontFamily={"Rubik_400Regular"} paddingTop="$4">
-            SALIDA
+        <View alignItems="center">
+          <H6 size="$6" fontFamily={"Regular"}>
+            Salida
           </H6>
           <DateChooser
             fechaInicio={getFechaManana()}
@@ -149,8 +156,23 @@ export function DetalleLugar({ route, navigation }) {
           />
         </View>
       </XStack>
-      <DemoSlider />
-      <DemoForm />
+      <H4 size="$7" fontFamily={"Medium"} paddingLeft="$5" paddingBottom="$5">
+        Cantidad de personas
+      </H4>
+      <DemoSlider costo={lugar.costo} callbackSetTotal={setTotal} />
+      <H4 alignSelf="center" size="$7" fontFamily={"Medium"} paddingTop="$10">
+        Total a pagar
+      </H4>
+      <H4 alignSelf="center" size="$9" fontFamily={"SemiBold"} paddingTop="$3">
+        ${total}
+      </H4>
+      <Separator paddingBottom="$5" />
+      <DemoForm
+        lugar={lugar}
+        fechaEntrada={fechaEntrada}
+        fechaSalida={fechaSalida}
+        idUsuario={1}
+      />
     </ScrollView>
   );
 }

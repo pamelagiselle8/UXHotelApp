@@ -1,4 +1,4 @@
-import { XGroup, ListItem, H1, Paragraph } from "tamagui";
+import { XGroup, ListItem, H1, Paragraph, YGroup } from "tamagui";
 import { Dimensions } from "react-native";
 import {
   Wifi,
@@ -10,99 +10,65 @@ import {
   Cat,
 } from "@tamagui/lucide-icons";
 
-function getIcono(icono) {
+function getIcono(icono, sizeIcono) {
   switch (icono) {
     case 1:
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={Wifi}
+        <Wifi
+          size={sizeIcono}
           color="$color.blue10Light"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>Wifi</Paragraph>
-        </ListItem>
+        />
       );
     case 2:
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={Cat}
+        <Cat
+          size={sizeIcono}
           color="$color.purple10Light"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>Pet Friendly</Paragraph>
-        </ListItem>
+        />
       );
     case 3:
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={Tv2}
+        <Tv2
+          size={sizeIcono}
           color="red"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>Netflix</Paragraph>
-        </ListItem>
+        />
       );
     case 4:
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={Bike}
+        <Bike
+          size={sizeIcono}
           color="$color.green10Light"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>Ciclismo</Paragraph>
-        </ListItem>
+        />
       );
     case 5:
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={Coffee}
+        <Coffee
+          size="$3"
           color="$color.orange10Dark"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>Desayuno</Paragraph>
-        </ListItem>
+        />
       );
     case 6: {
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={ShowerHead}
+        <ShowerHead
+          size={sizeIcono}
           color="red"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>Agua caliente</Paragraph>
-        </ListItem>
+        />
       );
     }
     case 7: {
+      // voy
       return (
-        <ListItem
-          width="5"
-          size="$5"
-          icon={BedDouble}
+        <BedDouble
+          size={sizeIcono}
           color="$pink10"
-          paddingRight=""
           backgroundColor="$backgroundTransparent"
-        >
-          <Paragraph>King-size</Paragraph>
-        </ListItem>
+        />
       );
     }
     default:
@@ -110,11 +76,48 @@ function getIcono(icono) {
   }
 }
 
+function getDescripcion(icono) {
+  switch (icono) {
+    case 1:
+      return "Wifi";
+    case 2:
+      return "Pet Friendly";
+    case 3:
+      return "Netflix";
+    case 4:
+      return "Ciclismo";
+    case 5:
+      return "Desayuno";
+    case 6:
+      return "Agua caliente";
+    case 7:
+      return "King-Size";
+    default:
+      break;
+  }
+}
+
 export function Servicios(props) {
+  let sizeIcono = "$3";
   return (
-    <XGroup alignSelf="center" left="$-3">
+    <XGroup alignSelf="center" paddingTop="$4">
       {props.icons.map((element, index) => (
-        <XGroup.Item key={index}>{getIcono(element)}</XGroup.Item>
+        <YGroup alignItems="center">
+          <ListItem
+            alignContent="center"
+            width="$7"
+            backgroundColor={"$backgroundTransparent"}
+          >
+            {getIcono(element, sizeIcono)}
+          </ListItem>
+          <ListItem
+            textAlign="center"
+            width="$12"
+            backgroundColor={"$backgroundTransparent"}
+          >
+            {getDescripcion(element)}
+          </ListItem>
+        </YGroup>
       ))}
     </XGroup>
   );

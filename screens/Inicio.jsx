@@ -3,45 +3,39 @@ import { DemoCard } from "../components/DemoCard";
 import { Dimensions } from "react-native";
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import axios from "axios";
 
-import {
-  Font,
-  useFonts,
-  Rubik_300Light,
-  Rubik_400Regular,
-  Rubik_500Medium,
-  Rubik_700Bold,
-  Rubik_600SemiBold,
-} from "@expo-google-fonts/rubik";
-import { getLugares } from "../API/LugaresAPI";
+import { useFonts } from "expo-font";
 
 const windowWidth = Dimensions.get("window").width;
 
 export function Inicio({ navigation }) {
-  const fonts = {
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium,
-    Rubik_700Bold,
-    Rubik_600SemiBold,
-  };
-
-  const loadFontsAsync = async () => {
-    try {
-      // Carga las fuentes de manera asíncrona
-      await Font.loadAsync(fonts);
-    } catch (error) {
-      // console.error("Error al cargar las fuentes:", error);
-    }
-  };
-  loadFontsAsync();
+  // Cargar Fonts
+  const [loaded] = useFonts({
+    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
+    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    Regular: require("@expo-google-fonts/rubik/Rubik_400Regular.ttf"),
+    Light: require("@expo-google-fonts/rubik/Rubik_300Light.ttf"),
+    Medium: require("@expo-google-fonts/rubik/Rubik_500Medium.ttf"),
+    Bold: require("@expo-google-fonts/rubik/Rubik_700Bold.ttf"),
+    SemiBold: require("@expo-google-fonts/rubik/Rubik_600SemiBold.ttf"),
+    ExtraBold: require("@expo-google-fonts/rubik/Rubik_800ExtraBold.ttf"),
+  });
 
   const [lugares, setLugares] = useState([]);
 
   useEffect(() => {
     const fetchDatos = async () => {
-      const lugaresData = await getLugares();
-      setLugares(lugaresData);
+      try {
+        const response = await axios.get(
+          "https://w4sbwwxb-3000.use.devtunnels.ms/getAlojamientos",
+          {}
+        );
+        const lugaresData = response.data;
+        setLugares(lugaresData);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchDatos();
   }, []);
@@ -64,7 +58,7 @@ export function Inicio({ navigation }) {
             paddingTop="$6"
             position="absolute"
             color="white"
-            fontFamily={"Rubik_700Bold"}
+            fontFamily={"ExtraBold"}
           >
             Explora
           </H2>
@@ -74,7 +68,7 @@ export function Inicio({ navigation }) {
             paddingBottom="$5"
             position="absolute"
             color="mistyrose"
-            fontFamily={"Rubik_300Light"}
+            fontFamily={"Light"}
             fontSize={18}
           >
             DESTACADOS

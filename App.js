@@ -27,7 +27,6 @@ const App = () => {
           <Stack.Screen
             name="Registro"
             component={Registro}
-            options={{ header: () => null }}
           />
           <Stack.Screen
             name="BottomMenu"
